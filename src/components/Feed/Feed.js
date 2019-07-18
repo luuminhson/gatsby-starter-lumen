@@ -2,6 +2,7 @@
 import React from 'react';
 import moment from 'moment';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import type { Edges } from '../../types';
 import styles from './Feed.module.scss';
 
@@ -13,6 +14,11 @@ const Feed = ({ edges }: Props) => (
   <div className={styles['feed']}>
     {edges.map((edge) => (
       <div className={styles['feed__item']} key={edge.node.fields.slug}>
+        {edge.node.frontmatter.featuredImage && (
+          <Link className={styles['feed__item-thumbnail-link']} to={edge.node.fields.slug}>
+            <Img className={styles['feed__item-postThumbnail']} fluid={edge.node.frontmatter.featuredImage.childImageSharp.fluid} />
+          </Link>
+        )}
         <div className={styles['feed__item-meta']}>
           <time className={styles['feed__item-meta-time']} dateTime={moment(edge.node.frontmatter.date).format('MMMM D, YYYY')}>
             {moment(edge.node.frontmatter.date).format('MMMM YYYY')}

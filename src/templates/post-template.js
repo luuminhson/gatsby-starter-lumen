@@ -36,6 +36,16 @@ export const query = graphql`
         description
         tags
         title
+        featuredImage {
+          childImageSharp {
+            resize(width: 1500, height: 1500) {
+              src
+            }
+            fluid(maxWidth: 1100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
