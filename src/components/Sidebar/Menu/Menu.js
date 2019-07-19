@@ -7,11 +7,15 @@ type Props = {
   menu: {
     label: string,
     path: string
-  }[]
+  }[],
+  className: string
 };
 
-const Menu = ({ menu }: Props) => (
-  <nav className={styles['menu']}>
+const Menu = ({ menu, className }: Props) => (
+  <nav className={[
+    styles['menu'],
+    className
+  ].join(' ')}>
     <ul className={styles['menu__list']}>
       {menu.map((item) => (
         <li className={styles['menu__list-item']} key={item.path}>

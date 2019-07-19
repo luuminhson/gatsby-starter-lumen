@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://luuminhson.com',
   pathPrefix: '/',
   title: 'Blog by Miso',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  subtitle: 'A digital product designer',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
@@ -25,8 +25,8 @@ module.exports = {
   ],
   author: {
     name: 'Miso',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    photo: '/media/miso-portrait.jpg',
+    bio: 'A digital product designer',
     contacts: {
       email: '#',
       telegram: '#',
@@ -35,5 +35,10 @@ module.exports = {
       rss: '#',
       vkontakte: '#'
     }
+  },
+  logo: {
+    src: '/miso-portrait.jpg',
+    alt: 'Miso Product Design',
+    text: 'Miso'
   }
 };

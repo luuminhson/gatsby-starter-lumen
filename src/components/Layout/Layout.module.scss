@@ -3,4 +3,127 @@
 
 .layout {
     lost-center: $layout-width;
+
+    .mask {
+        position: fixed;
+        left: 0;
+        top: 0;
+        top: 100vh;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        background-color: transparent;
+        z-index: 3000;
+        transition: background-color 0.2s, top linear 0s 0.2s;
+
+        &.on {
+            top: 0;
+            background-color: rgba(0,0,0,.54);
+            transition: background-color ease-in-out 0.2s, top linear 0s;
+        }
+    }
+    
+    .sidebar__wrapper {
+        max-width: 80vw;
+        background-color: $color-white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(110%);
+        z-index: 3100;
+        box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+        transition: transform ease-in-out 0.25s;
+
+        &.on {
+            transform: translateX(0%);
+        }
+
+        .sidebar__header {
+            height: 61px;
+            padding: 0 40px;
+            border-bottom: 1px solid $color-gray-border;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            .title {
+                text-transform: uppercase;
+                font-weight: 700;
+
+                .desktop {
+                    display: none;
+                }
+
+                .mobile {
+                    display: block;
+                }
+            }
+    
+            .icon {
+                position: relative;
+                display: block;
+                width: 60px;
+                height: 60px;
+                margin-right: -24px;
+                cursor: pointer;
+    
+                span {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    display: inline-block;
+                    height: 2px;
+                    width: 24px;
+                    background-color: $color-gray;
+    
+                    &:first-child {
+                        transform: rotateZ(45deg);
+                    }
+    
+                    &:last-child {
+                        transform: rotateZ(-45deg);
+                    }
+                }
+    
+                &:hover span {
+                    background-color: $color-base;
+                }
+            }
+        }
+    }
+
+    &.postStyle {
+        lost-center: $layout-width;
+        background-color: $color-white;
+    }
+    
+    // Min-width 685px
+    
+    @include breakpoint-sm {
+        .sidebar__wrapper {
+            max-width: 360px;
+
+            .sidebar__header {
+                .title {
+                    .desktop {
+                        display: block;
+                    }
+                    .mobile {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Min-width 960px
+    
+    @include breakpoint-md {
+        .sidebar {
+        }
+    }
 }

@@ -24,6 +24,11 @@ const useSiteMetadata = () => {
               label
               path
             }
+            logo {
+              src
+              alt
+              text
+            }
             url
             title
             subtitle
