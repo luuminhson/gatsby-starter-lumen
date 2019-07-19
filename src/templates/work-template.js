@@ -14,7 +14,7 @@ type Props = {
   pageContext: PageContext
 };
 
-const IndexTemplate = ({ data, pageContext }: Props) => {
+const WorkTemplate = ({ data, pageContext }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
 
   const {
@@ -26,7 +26,7 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
   } = pageContext;
 
 
-  const { edges } = data.blog;
+  const { edges } = data.allMarkdownRemark;
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
@@ -46,11 +46,11 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
 };
 
 export const query = graphql`
-  query IndexTemplate($postsLimit: Int!, $postsOffset: Int!) {
-    blog: allMarkdownRemark(
+  query WorkTemplate($postsLimit: Int!, $postsOffset: Int!) {
+    allMarkdownRemark(
         limit: $postsLimit,
         skip: $postsOffset,
-        filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } },
+        filter: { frontmatter: { category: { eq: "Design Culture" }, template: { eq: "post" }, draft: { ne: true } } },
         sort: { order: DESC, fields: [frontmatter___date] }
       ){
       edges {
@@ -81,4 +81,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexTemplate;
+export default WorkTemplate;
