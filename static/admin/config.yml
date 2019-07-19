@@ -5,6 +5,8 @@ backend:
 media_folder: "static/media"
 public_folder: "/media"
 
+site_url: https://luuminhson.com
+
 collections:
   - name: "posts"
     label: "Posts"
@@ -21,6 +23,7 @@ collections:
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
 
   - name: "pages"
     label: "Pages"
