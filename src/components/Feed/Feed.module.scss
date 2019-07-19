@@ -3,10 +3,28 @@
 
 .feed {
   &__item {
-    @include margin-bottom(1.25);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+    background: $color-white;
+    @include margin-bottom(1);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 
     &:last-child {
       @include margin-bottom(.5);
+    }
+
+    &-thumbnail-link {
+      margin: -24px -24px 16px;
+      display: block;
+    }
+
+    &-postThumbnail {
+      max-height: 300px;
     }
 
     &-title {
