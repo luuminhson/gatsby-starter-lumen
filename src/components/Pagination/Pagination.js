@@ -30,13 +30,21 @@ const Pagination = ({
     'pagination__next-link--disable': !hasNextPage
   });
 
+  const prevBtn = (
+    <Link rel="prev" to={prevPagePath} className={prevClassName}>{PAGINATION.PREV_PAGE}</Link>
+  );
+
+  const nextBtn = (
+    <Link rel="next" to={nextPagePath} className={nextClassName}>{PAGINATION.NEXT_PAGE}</Link>
+  );
+
   return (
     <div className={styles['pagination']}>
       <div className={styles['pagination__prev']}>
-        <Link rel="prev" to={prevPagePath} className={prevClassName}>{PAGINATION.PREV_PAGE}</Link>
+        {hasPrevPage && prevBtn}
       </div>
       <div className={styles['pagination__next']}>
-        <Link rel="next" to={nextPagePath} className={nextClassName}>{PAGINATION.NEXT_PAGE}</Link>
+        {hasNextPage && nextBtn}
       </div>
     </div>
   );
