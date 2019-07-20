@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #f5f5f5;
   margin: 0;
   font-family: $typographic-font-family;
   color: $typographic-base-font-color;
@@ -105,7 +105,7 @@ a {
   &:hover,
   &:focus,
   &:active {
-    color: $typographic-link-s-font-color;
+    color: lighten($typographic-link-p-font-color, 5%);
   }
 
 }
