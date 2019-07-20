@@ -12,7 +12,7 @@ category: Design Culture
 tags:
   - Design
   - Art
-featuredImage: /media/20986867_1434214123314795_1070663449140264960_n.jpg
+featuredImage: "/media/20986867_1434214123314795_1070663449140264960_n.jpg"
 ---
 
 **Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. *Aenean ultricies mi vitae est.* Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. 
