@@ -19,15 +19,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content`,
-        name: 'pages'
+        path: `${__dirname}/static/media`,
+        name: 'media'
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/media`,
-        name: 'media'
+        path: `${__dirname}/content`,
+        name: 'pages'
       }
     },
     {
@@ -94,6 +94,12 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: "media" // Must match the media source name above
+            }
+          },
           {
             resolve: 'gatsby-remark-katex',
             options: {
