@@ -2,8 +2,5 @@
 @import '../../../assets/scss/mixins';
 
 .meta {
-  &__date {
-    font-style: italic;
-  }
-
+  display: inline-block;
 }

@@ -44,6 +44,7 @@
     "classnames": "^2.2.6",
     "codecov": "^3.5.0",
     "gatsby": "^2.13.19",
+    "gatsby-background-image": "^0.8.0",
     "gatsby-image": "^2.2.6",
     "gatsby-link": "^2.2.2",
     "gatsby-plugin-catch-links": "^2.1.2",
@@ -81,7 +82,8 @@
     "react": "^16.8.6",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-is-scrolling": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.5.4",
