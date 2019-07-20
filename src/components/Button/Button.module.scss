@@ -33,4 +33,12 @@
   &:active {
     background-color: rgba($color-primary,0.12);
   }
+
+  &.onDark {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgba($color-white,0.08);
+    }
+  }
 }
