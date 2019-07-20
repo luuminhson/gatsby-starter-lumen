@@ -1,0 +1,36 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.button {
+  color: $color-primary;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .026854em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 12px;
+  display: inline-flex;
+  position: relative;
+  min-width: 64px;
+  height: 36px;
+  border: none;
+  outline: none;
+  line-height: 36px;  
+  overflow: hidden;
+  vertical-align: middle;
+  background-color: transparent;
+  border-radius: 3px;
+  user-select: none;
+  -webkit-appearance: none;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: $color-primary;
+    background-color: rgba($color-primary,0.04);
+  }
+
+  &:active {
+    background-color: rgba($color-primary,0.12);
+  }
+}
