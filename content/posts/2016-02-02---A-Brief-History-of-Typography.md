@@ -4,6 +4,7 @@ title: A Brief History of Typography
 slug: /posts/a-brief-history-of-typography/
 draft: false
 date: '2016-02-02T22:40:32.169Z'
+featuredImage: /media/photo-1560470503-4c8a1eb44400.jpeg
 description: >-
   Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in,
   pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
@@ -14,7 +15,6 @@ tags:
   - Monotype
   - History of typography
   - Helvetica
-featuredImage: /media/photo-1560470503-4c8a1eb44400.jpeg
 ---
 
 **Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. *Aenean ultricies mi vitae est.* Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. 

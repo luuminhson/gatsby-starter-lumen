@@ -4,6 +4,7 @@ title: Perfecting the Art of Perfection
 slug: /posts/perfecting-the-art-of-perfection/
 draft: false
 date: '2016-09-01T23:46:37.121Z'
+featuredImage: /media/photo-1554176259-aa961fc32671.jpeg
 description: >-
   Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum
   magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et
@@ -14,7 +15,6 @@ categories:
 tags:
   - Handwriting
   - Learning to write
-featuredImage: /media/photo-1554176259-aa961fc32671.jpeg
 ---
 
 Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum.

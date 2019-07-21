@@ -4,6 +4,7 @@ title: The Origins of Social Stationery Lettering
 slug: /posts/the-origins-of-social-stationery-lettering
 draft: false
 date: '2016-12-01T22:40:32.169Z'
+featuredImage: /media/photo-1562679817-2aac4f5581ec.jpeg
 description: >-
   Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
   turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
@@ -13,7 +14,6 @@ categories:
 tags:
   - Design
   - Art
-featuredImage: /media/photo-1562679817-2aac4f5581ec.jpeg
 ---
 
 **Pellentesque habitant morbi tristique** senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. *Aenean ultricies mi vitae est.* Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. 
