@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import Headroom from 'react-headroom'
 import { graphql, StaticQuery, Link } from 'gatsby';
+import Headroom from 'react-headroom';
 import Logo from './Logo';
 import Menu from './Menu';
 import styles from './Navigation.module.scss';
@@ -81,7 +81,7 @@ class PureNavigation extends React.Component {
                     className
                 ].join(' ')}>
                     <div className={styles['navigation__inner']}>
-                        {isPost ? backButton : <Logo type="img" logo={logo} dark={dark} />}
+                        <Logo type={logo.type} logo={logo} dark={dark} />
                         <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
                     </div>
                 </div>
@@ -110,6 +110,7 @@ export const Navigation = (props) => (
                   }
                   alt
                   text
+                  type
               }
               darkNavigation
             }

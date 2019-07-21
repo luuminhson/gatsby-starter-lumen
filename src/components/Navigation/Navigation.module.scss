@@ -56,12 +56,10 @@
         &.on_featured_image {
             .navigation {
                 background-color: transparent;
-                box-shadow: none;
-                transition: box-shadow 0.5s ease-in-out;
+                box-shadow: 0px 4px 40px -40px rgba(0,0,0,0.2);
+                transition: box-shadow 0.3s cubic-bezier(0, 0.78, 0.57, 1.05), background-color 0.5s cubic-bezier(0, 0.78, 0.57, 1.05);
         
                 &__inner {
-                    transition: background-color 0.5s ease-in-out;
-    
                     .backButton {
                         color: $color-white;
                     }
@@ -73,14 +71,14 @@
     &.unpinned {
         .navigation {
             box-shadow: none;
-            transition: box-shadow 0.5s ease-in-out;
+            transition: box-shadow 0.5s cubic-bezier(0, 0.78, 0.57, 1.05);
         }
     }
 
     &.pinned {
         .navigation {
             box-shadow: $nav-shadow;
-            transition: box-shadow 0.5s ease-in-out;
+            transition: box-shadow 0.5s cubic-bezier(0, 0.78, 0.57, 1.05);
         }
     }
 }

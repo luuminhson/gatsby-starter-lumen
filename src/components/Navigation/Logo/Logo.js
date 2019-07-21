@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Logo = ({ logo, type, dark }: Props) => (
-  <div className={styles['logo']}>
+  <div className={[styles['logo'], dark && styles['dark']].join(' ')}>
     {(type === 'img') ? (
       <Link to="/" className={styles['logo__link']}>
         <img

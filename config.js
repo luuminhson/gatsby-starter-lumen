@@ -46,6 +46,7 @@ module.exports = {
       light: '/logo-light.svg'
     },
     alt: 'Miso Product Design',
-    text: 'Miso'
+    text: 'Miso',
+    type: 'img' // 'img' for image logo or whatever string for text logo
   }
 };
