@@ -7,11 +7,11 @@ import Page from '../components/Page';
 import { useSiteMetadata, useTagsList } from '../hooks';
 
 const TagsListTemplate = () => {
-  const { title, subtitle } = useSiteMetadata();
+  const { title, subtitle, darkNavigation: dark } = useSiteMetadata();
   const tags = useTagsList();
 
   return (
-    <Layout title={`Tags - ${title}`} description={subtitle}>
+    <Layout title={`Tags - ${title}`} description={subtitle} dark={dark}>
       <Page title="Tags">
         <ul>
           {tags.map((tag) => (

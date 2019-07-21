@@ -25,7 +25,10 @@ const useSiteMetadata = () => {
               path
             }
             logo {
-              src
+              src {
+                dark
+                light
+              }
               alt
               text
             }
@@ -34,6 +37,7 @@ const useSiteMetadata = () => {
             subtitle
             copyright
             disqusShortname
+            darkNavigation
           }
         }
       }

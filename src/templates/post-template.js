@@ -10,13 +10,13 @@ type Props = {
 };
 
 const PostTemplate = ({ data }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: siteTitle, subtitle: siteSubtitle, darkNavigation: dark } = useSiteMetadata();
   const { title: postTitle, description: postDescription } = data.markdownRemark.frontmatter;
   const metaDescription = postDescription !== null ? postDescription : siteSubtitle;
   const hasFeaturedImage = null !== data.markdownRemark.frontmatter.featuredImage;
 
   return (
-    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} isPost hasFeaturedImage={hasFeaturedImage} style={`post`}>
+    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} isPost hasFeaturedImage={hasFeaturedImage} style={`post`} dark={dark}>
       <Post post={data.markdownRemark} />
       {console.log(hasFeaturedImage)}
     </Layout>

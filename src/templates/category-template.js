@@ -14,7 +14,7 @@ type Props = {
 };
 
 const CategoryTemplate = ({ data, pageContext }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: siteTitle, subtitle: siteSubtitle, darkNavigation: dark } = useSiteMetadata();
 
   const {
     category,
@@ -29,7 +29,7 @@ const CategoryTemplate = ({ data, pageContext }: Props) => {
   const pageTitle = currentPage > 0 ? `${category} - Page ${currentPage} - ${siteTitle}` : `${category} - ${siteTitle}`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout title={pageTitle} description={siteSubtitle} dark={dark}>
       <Page title={category}>
         <Feed edges={edges} />
         <Pagination

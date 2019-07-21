@@ -31,6 +31,7 @@ class Layout extends React.Component {
       description,
       isIndex,
       isPost,
+      dark,
       hasFeaturedImage
     } = this.props;
 
@@ -38,7 +39,7 @@ class Layout extends React.Component {
 
     return (
       <div>
-        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} onFeaturedImage={hasFeaturedImage} />
+        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} onFeaturedImage={hasFeaturedImage} dark={dark} />
         <div
           className={[
             styles['layout'],

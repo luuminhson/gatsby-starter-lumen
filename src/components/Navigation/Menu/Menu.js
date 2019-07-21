@@ -11,13 +11,15 @@ type Props = {
   burgerClick: bool,
   isPost: bool,
   unfixed: bool,
+  dark: bool,
   onFeaturedImage: bool
 };
 
-const Menu = ({ menu, burgerClick, isPost, unfixed, onFeaturedImage }: Props) => (
+const Menu = ({ menu, burgerClick, isPost, unfixed, dark, onFeaturedImage }: Props) => (
   <div className={[
     styles['wrapper'],
     unfixed && styles['unfixed'],
+    dark && styles['dark'],
     onFeaturedImage && styles['on_featured_image']
   ].join(' ')}>
     {!isPost && (

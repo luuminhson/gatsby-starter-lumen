@@ -14,7 +14,7 @@ type Props = {
 };
 
 const IndexTemplate = ({ data, pageContext }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: siteTitle, subtitle: siteSubtitle, darkNavigation: dark } = useSiteMetadata();
 
   const {
     currentPage,
@@ -29,7 +29,7 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle} isIndex>
+    <Layout title={pageTitle} description={siteSubtitle} isIndex dark={dark}>
       <Page>
         <Feed edges={blogPost} />
         { hasNextPage &&

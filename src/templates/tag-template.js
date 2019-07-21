@@ -14,7 +14,7 @@ type Props = {
 };
 
 const TagTemplate = ({ data, pageContext }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const { title: siteTitle, subtitle: siteSubtitle, darkNavigation: dark } = useSiteMetadata();
 
   const {
     tag,
@@ -29,7 +29,7 @@ const TagTemplate = ({ data, pageContext }: Props) => {
   const pageTitle = currentPage > 0 ? `All Posts tagged as "${tag}" - Page ${currentPage} - ${siteTitle}` : `All Posts tagged as "${tag}" - ${siteTitle}`;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle}>
+    <Layout title={pageTitle} description={siteSubtitle} dark={dark}>
       <Page title={tag}>
         <Feed edges={edges} />
         <Pagination
@@ -49,6 +49,7 @@ export const query = graphql`
       siteMetadata {
         title
         subtitle
+        darkNavigation
       }
     }
     allMarkdownRemark(

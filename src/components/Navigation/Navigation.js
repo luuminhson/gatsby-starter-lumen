@@ -11,7 +11,9 @@ class PureNavigation extends React.Component {
         super(props);
 
         this.state = {
-            unfixed: true
+            unfixed: true,
+            pinned: false,
+            unpinned: false
         };
     }
 
@@ -23,7 +25,17 @@ class PureNavigation extends React.Component {
 
     headRoomUnpin = () => {
         this.setState({
-            unfixed: false
+            unfixed: false,
+            pinned: false,
+            unpinned: true
+        });
+    }
+
+    headRoomPin = () => {
+        this.setState({
+            unfixed: false,
+            unpinned: false,
+            pinned: true
         });
     }
 
@@ -34,17 +46,18 @@ class PureNavigation extends React.Component {
             isPost,
             onFeaturedImage,
             burgerClick,
+            dark,
             className
         } = this.props;
 
-        const { unfixed } = this.state;
+        const { unfixed, pinned, unpinned } = this.state;
 
         const {
             menu,
             logo
         } = data.site.siteMetadata;
 
-        const backButton = <Link to='/' className={styles['backButton']}>← &nbsp;Back</Link>;
+        const backButton = <Link to='/' className={styles['backButton']}>←</Link>;
 
         return (
             <Headroom
@@ -52,8 +65,11 @@ class PureNavigation extends React.Component {
                 downTolerance={8}
                 onUnfix={this.headRoomUnfix}
                 onUnpin={this.headRoomUnpin}
+                onPin={this.headRoomPin}
                 className={[
                     styles['headroom'],
+                    unpinned && styles['unpinned'],
+                    pinned && styles['pinned'],
                     isPost && unfixed && styles['unfixed'],
                     isPost && onFeaturedImage && styles['on_featured_image'],
                 ].join(' ')}
@@ -61,11 +77,12 @@ class PureNavigation extends React.Component {
                 <div className={[
                     styles['navigation'],
                     isPost && styles['is_post'],
+                    dark && styles['dark'],
                     className
                 ].join(' ')}>
                     <div className={styles['navigation__inner']}>
-                        {isPost ? backButton : <Logo logo={logo} />}
-                        <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} onFeaturedImage={onFeaturedImage} unfixed={unfixed} />
+                        {isPost ? backButton : <Logo type="img" logo={logo} dark={dark} />}
+                        <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
                     </div>
                 </div>
             </Headroom>
@@ -87,10 +104,14 @@ export const Navigation = (props) => (
                 path
               }
               logo {
-                  src
+                  src {
+                    dark
+                    light
+                  }
                   alt
                   text
               }
+              darkNavigation
             }
           }
         }
