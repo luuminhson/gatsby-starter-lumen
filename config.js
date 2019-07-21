@@ -15,11 +15,11 @@ module.exports = {
       path: '/'
     },
     {
-      label: 'About me',
+      label: 'About',
       path: '/pages/about'
     },
     {
-      label: 'Contact me',
+      label: 'Contact',
       path: '/pages/contacts'
     }
   ],
@@ -28,12 +28,15 @@ module.exports = {
     photo: '/media/miso-portrait.jpg',
     bio: 'A digital product designer',
     contacts: {
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vkontakte: '#'
+      facebook: 'luuminhson',
+      instagram: 'misopotato',
+      twitter: 'luuminhson',
+      linkedin: 'misoproductdesign',
+      dribbble: 'miso',
+      flickr: 'photos/114104945@N04',
+      github: 'luuminhson',
+      email: 'luuminhson@gmail.com',
+      rss: '#'
     }
   },
   logo: {

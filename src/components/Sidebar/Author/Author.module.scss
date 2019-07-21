@@ -2,6 +2,10 @@
 @import '../../../assets/scss/mixins';
 
 .author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &__photo {
     display: inline-block;
     margin-bottom: 0;

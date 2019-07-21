@@ -11,6 +11,8 @@
 
   &__header-content {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 24px;
     @include margin-bottom(2);
     box-sizing: border-box;
@@ -139,7 +141,8 @@
     }
 
     &__header-content {
-      max-width: calc(100vw - 64px);
+      max-width: $layout-post-width;
+      padding: 0;
     }
 
   }

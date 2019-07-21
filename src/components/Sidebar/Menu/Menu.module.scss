@@ -2,7 +2,7 @@
 @import '../../../assets/scss/mixins';
 
 .menu {
-  @include margin-bottom(1);
+  @include margin-bottom(2);
 
   &__list {
     list-style: none;
@@ -10,24 +10,29 @@
     margin: 0;
 
     &-item {
-      padding: 0;
-      margin: 10px 0;
+      padding: 0 24px;
+      margin: 0;
+      display: inline-block;
 
       &-link {
+        display: block;
         font-size: $typographic-base-font-size;
         color: $typographic-base-font-color;
         font-weight: normal;
+        padding: 6px 0;
         border: 0;
 
         &:hover,
         &:focus {
-          color: $color-primary;
-          border-bottom: 1px solid $color-primary;
+          color: $color-base;
+          border-bottom: 3px solid $color-base;
         }
 
         &--active {
           color: $color-base;
-          border-bottom: 1px solid $color-base;
+          border-bottom: 3px solid $color-primary;
+          cursor: not-allowed;
+          pointer-events: none;
         }
 
       }
