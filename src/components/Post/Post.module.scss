@@ -2,14 +2,55 @@
 @import '../../assets/scss/mixins';
 
 .post {
+
   &__hero {
     position: relative;
     @include margin-bottom(1.5);
     // min-height: 25vh;
   }
 
+  &__header-content {
+    width: 100%;
+    padding: 0 24px;
+    @include margin-bottom(2);
+    box-sizing: border-box;
+    color: $color-base;
+    position: relative;
+    z-index: 1;
+
+    &__title {
+      font-size: $typographic-base-font-size * 2;
+      @include line-height(1.65);
+      @include margin-top(0.5);
+      @include margin-bottom(0.5);
+      font-weight: 600;
+    }
+
+    &__meta {
+      font-size: 0.8rem;
+      color: lighten($color-base, 20%);
+      margin: 20px 0;
+  
+      &__in-category {
+        margin: 0 4px;
+      }
+  
+      &__category-link {
+        color: lighten($color-base, 10%);
+        font-weight: 500;
+        text-decoration: underline;
+      }
+    }
+  }
+
   &__heroImage {
-    height: 50vh;
+    position: relative;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 2.5rem 2rem 1.8rem;
+    box-sizing: border-box;
 
     &__mask {
       content: '';
@@ -21,41 +62,18 @@
       background: rgba(0,0,0,0.4);
       background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
     }
-  }
 
-  &__header-content {
-    max-width: calc(100vw - 64px);
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    color: $color-white;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    .post__header-content {
+      color: $color-white;
+      padding: 0;
+      @include margin-bottom(0);
 
-    &__title {
-      font-size: $typographic-base-font-size * 2;
-      @include line-height(1.65);
-      @include margin-top(0.5);
-      @include margin-bottom(0.5);
-      font-weight: 600;
-    }
+      &__meta {
+        color: darken($color-white, 20%);
 
-    &__meta {
-      font-size: 0.9rem;
-      color: darken($color-white, 20%);
-      margin: 20px 0;
-  
-      &__in-category {
-        margin: 0 4px;
-      }
-  
-      &__category-link {
-        color: darken($color-white, 10%);
-        font-weight: 600;
-        text-decoration: underline;
+        &__category-link {
+          color: darken($color-white, 10%);
+        }
       }
     }
   }
@@ -113,6 +131,15 @@
       margin: 0;
       top: 30px;
       left: 30px
+    }
+
+    &__heroImage {
+      align-items: center;
+      text-align: center;
+    }
+
+    &__header-content {
+      max-width: calc(100vw - 64px);
     }
 
   }

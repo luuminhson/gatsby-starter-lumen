@@ -1,14 +1,10 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
 
-
 // Mobile - Max-width 684px
 
 .navigation {
     width: 100vw;
-    position: fixed;
-    left: 0;
-    top: 0;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     z-index: 2000;
 
@@ -27,7 +23,7 @@
     &__inner {
         position: relative;
         padding: 0 24px;
-        height: 60px;
+        height: $nav-height;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -42,24 +38,36 @@
     }
 }
 
+.is_post {
+
+}
+
+.headroom {
+    position: relative;
+    z-index: 100;
+
+    &.unfixed {
+        &.on_featured_image {
+            .navigation {
+                box-shadow: none;
+                transition: box-shadow 0.3s ease-in-out;
+        
+                &__inner {
+                    background-color: transparent;
+                    transition: background-color 0.3s ease-in-out;
+    
+                    .backButton {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // Small Desktop - Min-width 685px
 
 @include breakpoint-sm {
-    .navigation {
-        opacity: 1;
-        transform: translateY(0);
-        transition: transform 0.3s cubic-bezier(.4,0,.2,1) .3s, opacity 0s .3s;
-    }
-
-    &.transformed.hide {
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform .3s cubic-bezier(.4,0,.6,1),opacity 0s .3s;
-    }
-
-    &.transform.show {
-        transform: translateY(0);
-    }
 }
 
 // Large Desktop - Min-width 960px

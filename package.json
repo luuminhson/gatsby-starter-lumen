@@ -82,8 +82,8 @@
     "react": "^16.8.6",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "react-is-scrolling": "^1.0.1"
+    "react-headroom": "^2.2.8",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "7.5.4",

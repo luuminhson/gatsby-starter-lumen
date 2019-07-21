@@ -29,54 +29,60 @@ class Layout extends React.Component {
       children,
       title,
       description,
-      isIndex
+      isIndex,
+      isPost,
+      hasFeaturedImage
     } = this.props;
 
     const { sidebar } = this.state;
 
     return (
-      <div
-        className={[
-          styles['layout'],
-          sidebar === true && styles['noScroll'],
-          style === 'post' && styles['postStyle']
-        ].join(' ')}
-      >
-        <Helmet>
-          <html lang="en" />
-          <title>{title}</title>
-          <meta name="description" content={description} />
-          <meta property="og:site_name" content={title} />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:title" content={title} />
-        </Helmet>
-        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} />
+      <div>
+        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} onFeaturedImage={hasFeaturedImage} />
         <div
           className={[
-            styles['mask'],
-            sidebar === true ? styles['on'] : null
-          ].join(' ')}
-          onClick={this.toggleSidebar}
-        />
-        <div
-          className={[
-            styles['sidebar__wrapper'],
-            sidebar === true ? styles['on'] : null
+            styles['layout'],
+            sidebar === true && styles['noScroll'],
+            style === 'post' && styles['postStyle'],
+            isIndex && styles['is_index'],
+            hasFeaturedImage && styles['has_featured_image']
           ].join(' ')}
         >
-          <div className={styles['sidebar__header']}>
-            <div className={styles['title']}>
-              <span className={styles['mobile']}>Menu</span>
-              <span className={styles['desktop']}>More Information</span>
+          <Helmet>
+            <html lang="en" />
+            <title>{title}</title>
+            <meta name="description" content={description} />
+            <meta property="og:site_name" content={title} />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content={title} />
+          </Helmet>
+          <div
+            className={[
+              styles['mask'],
+              sidebar === true ? styles['on'] : null
+            ].join(' ')}
+            onClick={this.toggleSidebar}
+          />
+          <div
+            className={[
+              styles['sidebar__wrapper'],
+              sidebar === true ? styles['on'] : null
+            ].join(' ')}
+          >
+            <div className={styles['sidebar__header']}>
+              <div className={styles['title']}>
+                <span className={styles['mobile']}>Menu</span>
+                <span className={styles['desktop']}>More Information</span>
+              </div>
+              <div className={styles['icon']} onClick={this.toggleSidebar}>
+                <span />
+                <span />
+              </div>
             </div>
-            <div className={styles['icon']} onClick={this.toggleSidebar}>
-              <span />
-              <span />
-            </div>
+            <Sidebar sidebar={sidebar} />
           </div>
-          <Sidebar sidebar={sidebar} />
+          {children}
         </div>
-        {children}
       </div>
     );
   }

@@ -19,28 +19,39 @@ const Post = ({ post }: Props) => {
   const { tagSlugs, slug, categorySlug } = post.fields;
   const { tags, title, date, featuredImage, category } = post.frontmatter;
 
+  const postHeader = featuredImage ? (
+    <BackgroundImage
+      Tag="section"
+      className={styles['post__heroImage']}
+      fluid={featuredImage.childImageSharp.fluid}
+      backgroundColor={'#040e18'}
+    >
+      <div className={styles['post__heroImage__mask']} />
+      <div className={styles['post__header-content']}>
+        <h1 className={styles['post__header-content__title']}>{title}</h1>
+        <div className={styles['post__header-content__meta']}>
+          <Meta date={date} className={styles['post__header-content__meta__date']} />
+          <span className={styles['post__header-content__meta__in-category']}>in</span>
+          <Link className={styles['post__header-content__meta__category-link']} to={categorySlug}>{category}</Link>
+        </div>
+      </div>
+    </BackgroundImage>
+  ) : (
+      <div className={styles['post__header-content']}>
+        <h1 className={styles['post__header-content__title']}>{title}</h1>
+        <div className={styles['post__header-content__meta']}>
+          <Meta date={date} className={styles['post__header-content__meta__date']} />
+          <span className={styles['post__header-content__meta__in-category']}>in</span>
+          <Link className={styles['post__header-content__meta__category-link']} to={categorySlug}>{category}</Link>
+        </div>
+      </div>
+    );
+
   return (
     <div className={styles['post']}>
 
       <div className={styles['post__hero']}>
-        { featuredImage && (
-          <BackgroundImage
-            Tag="section"
-            className={styles['post__heroImage']}
-            fluid={featuredImage.childImageSharp.fluid}
-            backgroundColor={'#040e18'}
-          >
-            <div className={styles['post__heroImage__mask']} />
-            <div className={styles['post__header-content']}>
-              <h1 className={styles['post__header-content__title']}>{title}</h1>
-              <div className={styles['post__header-content__meta']}>
-                <Meta date={date} className={styles['post__header-content__meta__date']} />
-                <span className={styles['post__header-content__meta__in-category']}>in</span>
-                <Link className={styles['post__header-content__meta__category-link']} to={categorySlug}>{category}</Link>
-              </div>
-               </div>
-          </BackgroundImage>
-        )}
+        {postHeader}
       </div>
 
       <div className={styles['post__content']}>

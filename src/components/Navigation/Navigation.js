@@ -1,111 +1,81 @@
 // @flow
 import React from 'react';
-import ReactDOM from 'react-dom';
+import Headroom from 'react-headroom'
 import { graphql, StaticQuery, Link } from 'gatsby';
 import Logo from './Logo';
 import Menu from './Menu';
 import styles from './Navigation.module.scss';
-import { useSiteMetadata } from '../../hooks';
 
 class PureNavigation extends React.Component {
     constructor(props) {
-      super(props);
-  
-      this.state = {
-        navTransform: false,
-        lastScrollPos: 0,
-        scrollDirection: ''
-      };
-    }
-  
-    // Detect scroll offset top to animate Navigation Bar
-    getOffset = (element) => {
-      const bounding = element.getBoundingClientRect();
-      return {
-        top: bounding.top + document.body.scrollTop,
-        left: bounding.left + document.body.scrollLeft
-      };
-    }
-  
-    handleScroll = () => {
-      // Add className to Navigation Bar when it meets the stopper element
-      const stopperElement = ReactDOM.findDOMNode(this.refs.navStopper);
-      const offset = this.getOffset(stopperElement);
-      const windowsScrollTop = window.pageYOffset;
-      if (windowsScrollTop >= offset.top) {
-        this.setState({ navTransform: true });
-      } else {
-        this.setState({ navTransform: false });
-      }
-  
-      // Update state to indicate scroll direction
-      if (this.state.lastScrollPos > windowsScrollTop) {
-        this.setState({
-          scrollDirection: 'up',
-          lastScrollPos: windowsScrollTop
-        });
-      } else if (this.state.lastScrollPos < windowsScrollTop) {
-        this.setState({
-          scrollDirection: 'down',
-          lastScrollPos: windowsScrollTop
-        });
-      }
-    }
-  
-    // Trigger the scroll handle event
-    componentDidMount() {
-      if (typeof window !== 'undefined') {
-        window.addEventListener('scroll', this.handleScroll);
-      }
-    }
-  
-    componentWillUnmount() {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('scroll', this.handleScroll);
-      }
-    }
-  
-    render() {
-      const {
-        data,
-        isIndex,
-        burgerClick
-      } = this.props;
-  
-      const {
-        navTransform,
-        scrollDirection
-      } = this.state;
-  
-      const {
-        menu,
-        logo
-      } = data.site.siteMetadata;
+        super(props);
 
-    //   const { author, copyright, menu, logo } = useSiteMetadata();
-  
-      const backButton = <Link to='/' className={styles['backButton']}>← &nbsp;Back</Link>;
-  
-      return (
-        <div className={[
-          styles['navigation'],
-          navTransform ? styles['transformed'] : null,
-          scrollDirection === 'up' ? styles['show'] : null,
-          scrollDirection === 'down' ? styles['hide'] : null,
-        ].join(' ')}>
-          <div className={styles['navStopper']} id='navStopper' ref='navStopper' />
-          <div className={styles['navigation__inner']}>
-            {isIndex ? <Logo logo={logo} /> : backButton}
-            <Menu menu={menu} burgerClick={burgerClick} />
-          </div>
-        </div>
-      );
+        this.state = {
+            unfixed: true
+        };
     }
-  }
-  
-  export const Navigation = (props) => (
+
+    headRoomUnfix = () => {
+        this.setState({
+            unfixed: true
+        });
+    }
+
+    headRoomUnpin = () => {
+        this.setState({
+            unfixed: false
+        });
+    }
+
+    render() {
+        const {
+            data,
+            isIndex,
+            isPost,
+            onFeaturedImage,
+            burgerClick,
+            className
+        } = this.props;
+
+        const { unfixed } = this.state;
+
+        const {
+            menu,
+            logo
+        } = data.site.siteMetadata;
+
+        const backButton = <Link to='/' className={styles['backButton']}>← &nbsp;Back</Link>;
+
+        return (
+            <Headroom
+                upTolerance={8}
+                downTolerance={8}
+                onUnfix={this.headRoomUnfix}
+                onUnpin={this.headRoomUnpin}
+                className={[
+                    styles['headroom'],
+                    isPost && unfixed && styles['unfixed'],
+                    isPost && onFeaturedImage && styles['on_featured_image'],
+                ].join(' ')}
+            >
+                <div className={[
+                    styles['navigation'],
+                    isPost && styles['is_post'],
+                    className
+                ].join(' ')}>
+                    <div className={styles['navigation__inner']}>
+                        {isPost ? backButton : <Logo logo={logo} />}
+                        <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} onFeaturedImage={onFeaturedImage} unfixed={unfixed} />
+                    </div>
+                </div>
+            </Headroom>
+        );
+    }
+}
+
+export const Navigation = (props) => (
     <StaticQuery
-      query={graphql`
+        query={graphql`
         query NavigationQuery {
           site {
             siteMetadata {
@@ -125,8 +95,8 @@ class PureNavigation extends React.Component {
           }
         }
       `}
-      render={(data) => <PureNavigation {...props} data={data}/>}
+        render={(data) => <PureNavigation {...props} data={data} />}
     />
-  );
-  
-  export default Navigation;
+);
+
+export default Navigation;

@@ -36,6 +36,16 @@
     }
   }
 
+  &.unfixed {
+    &.on_featured_image {
+      .icon {
+        span {
+          background: $color-white;
+        }
+      }
+    }
+  }
+
   .menu {
     display: none;
     position: relative;

@@ -8,26 +8,35 @@ type Props = {
     label: string,
     path: string,
   }[],
-  burgerClick: bool
+  burgerClick: bool,
+  isPost: bool,
+  unfixed: bool,
+  onFeaturedImage: bool
 };
 
-const Menu = ({ menu, burgerClick }: Props) => (
-  <div className={styles['wrapper']}>
-    <nav className={styles['menu']}>
-      <ul className={styles['menu__list']}>
-        {menu.map((item) => (
-          <li className={styles['menu__list-item']} key={item.path}>
-            <Link
-              to={item.path}
-              className={styles['menu__list-item-link']}
-              activeClassName={styles['menu__list-item-link--active']}
-            >
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+const Menu = ({ menu, burgerClick, isPost, unfixed, onFeaturedImage }: Props) => (
+  <div className={[
+    styles['wrapper'],
+    unfixed && styles['unfixed'],
+    onFeaturedImage && styles['on_featured_image']
+  ].join(' ')}>
+    {!isPost && (
+      <nav className={styles['menu']}>
+        <ul className={styles['menu__list']}>
+          {menu.map((item) => (
+            <li className={styles['menu__list-item']} key={item.path}>
+              <Link
+                to={item.path}
+                className={styles['menu__list-item-link']}
+                activeClassName={styles['menu__list-item-link--active']}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
     <div className={styles['icon']} onClick={burgerClick}>
       <div className={styles['icon__inner']}>
         <span></span>
