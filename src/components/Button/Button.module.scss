@@ -2,10 +2,11 @@
 @import '../../assets/scss/mixins';
 
 .button {
+  font-family: $typographic-font-family-heading;
   color: $color-primary;
   font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .026854em;
+  font-weight: 400;
+  letter-spacing: .046854em;
   text-decoration: none;
   text-transform: uppercase;
   padding: 0 12px;

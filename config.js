@@ -3,12 +3,13 @@
 module.exports = {
   url: 'https://luuminhson.com',
   pathPrefix: '/',
-  title: 'Blog by Miso',
-  subtitle: 'A digital product designer',
+  title: 'Works &amp; notes by Miso',
+  subtitle: 'A digital product designer.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 10,
   googleAnalyticsId: 'UA-73379983-2',
+  darkNavigation: true,
   menu: [
     {
       label: 'Articles',
@@ -26,7 +27,7 @@ module.exports = {
   author: {
     name: 'Miso',
     photo: '/media/miso-portrait.jpg',
-    bio: 'A digital product designer',
+    bio: 'A digital product designer.',
     contacts: {
       facebook: 'luuminhson',
       instagram: 'misopotato',
@@ -40,7 +41,10 @@ module.exports = {
     }
   },
   logo: {
-    src: '/miso-portrait.jpg',
+    src: {
+      dark: '/logo-dark.svg',
+      light: '/logo-light.svg'
+    },
     alt: 'Miso Product Design',
     text: 'Miso'
   }

@@ -13,7 +13,8 @@ module.exports = {
     disqusShortname: siteConfig.disqusShortname,
     menu: siteConfig.menu,
     author: siteConfig.author,
-    logo: siteConfig.logo
+    logo: siteConfig.logo,
+    darkNavigation: siteConfig.darkNavigation
   },
   plugins: [
     {
@@ -196,5 +197,22 @@ module.exports = {
       }
     },
     'gatsby-plugin-flow',
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Merriweather Sans`,
+            variants: [`400`, `400i`, `700`, `700i`],
+            subsets: [`latin-ext`, `vietnamese`]
+          },
+          {
+            family: `Lora`,
+            variants: [`400`, `400i`, `700`, `700i`],
+            subsets: [`latin-ext`, `vietnamese`]
+          },
+        ],
+      },
+    }
   ]
 };

@@ -16,9 +16,11 @@
 
       &-link {
         display: block;
-        font-size: $typographic-base-font-size;
+        font-family: $typographic-font-family-heading;
+        font-size: 0.8rem;
         color: $typographic-base-font-color;
-        font-weight: normal;
+        text-transform: uppercase;
+        font-weight: 700;
         padding: 6px 0;
         border: 0;
 

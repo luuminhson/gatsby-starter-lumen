@@ -12,8 +12,12 @@ $color-gray: lighten($color-base, 40%);
 $color-gray-border: lighten($color-base, 77%);
 $color-gray-bg: lighten($color-base, 79%);
 
+$color-nav-dark: #090D17;
+$color-nav-light: #fff;
+
 // Typographic
-$typographic-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$typographic-font-family-heading: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$typographic-font-family-body: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
 
 $typographic-root-font-size: 100;
 $typographic-base-font-size: 16px;
@@ -43,5 +47,7 @@ $layout-breakpoint-lg: 1100px;
 
 // Others
 $nav-height: 60px;
-$sidebar-max-width-mobile: 80vh;
+// $nav-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+$nav-shadow: 0px 4px 40px -12px rgba(0,0,0,0.2);
+$sidebar-max-width-mobile: 100vw;
 $sidebar-max-width-desktop: 320px;
