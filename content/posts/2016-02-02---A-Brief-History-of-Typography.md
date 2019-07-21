@@ -7,7 +7,8 @@ date: '2016-02-02T22:40:32.169Z'
 description: >-
   Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in,
   pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
-category: Design Inspiration
+categories:
+  - Design Inspiration
 tags:
   - Linotype
   - Monotype

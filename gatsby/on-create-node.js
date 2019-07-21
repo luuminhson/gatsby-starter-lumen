@@ -9,6 +9,7 @@ const onCreateNode = ({ node, actions, getNode }) => {
 
   fmImagesToRelative(node);
 
+  // Create slug for posts
   if (node.internal.type === 'MarkdownRemark') {
     if (typeof node.frontmatter.slug !== 'undefined') {
       createNodeField({
@@ -25,14 +26,16 @@ const onCreateNode = ({ node, actions, getNode }) => {
       });
     }
 
+    // Create slug for tags
     if (node.frontmatter.tags) {
       const tagSlugs = node.frontmatter.tags.map((tag) => `/tag/${_.kebabCase(tag)}/`);
       createNodeField({ node, name: 'tagSlugs', value: tagSlugs });
     }
 
-    if (node.frontmatter.category) {
-      const categorySlug = `/category/${_.kebabCase(node.frontmatter.category)}/`;
-      createNodeField({ node, name: 'categorySlug', value: categorySlug });
+    // Create slug for categories
+    if (node.frontmatter.categories) {
+      const categorySlugs = node.frontmatter.categories.map((category) => `/category/${_.kebabCase(category)}/`);
+      createNodeField({ node, name: 'categorySlugs', value: categorySlugs });
     }
   }
 };

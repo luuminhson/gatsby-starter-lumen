@@ -57,12 +57,12 @@ export const query = graphql`
         node {
           fields {
             slug
-            categorySlug
+            categorySlugs
           }
           frontmatter {
             title
             date
-            category
+            categories
             description
             featuredImage {
               childImageSharp {
@@ -81,19 +81,19 @@ export const query = graphql`
     work: allMarkdownRemark(
         limit: $postsLimit,
         skip: $postsOffset,
-        filter: { frontmatter: { category: {eq: "Work" }, template: { eq: "post" }, draft: { ne: true } } },
+        filter: { frontmatter: { categories: { in: ["Work"] }, template: { eq: "post" }, draft: { ne: true } } },
         sort: { order: DESC, fields: [frontmatter___date] }
       ){
       edges {
         node {
           fields {
             slug
-            categorySlug
+            categorySlugs
           }
           frontmatter {
             title
             date
-            category
+            categories
             description
             featuredImage {
               childImageSharp {

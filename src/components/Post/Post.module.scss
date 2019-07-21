@@ -73,8 +73,22 @@
       &__meta {
         color: darken($color-white, 20%);
 
-        &__category-link {
-          color: darken($color-white, 10%);
+        &__categories {
+          display: inline-block;
+
+          &__list {
+            li {
+              position: relative;
+
+              &:after {
+                content: ', ';
+              }
+
+              &:last-child:after {
+                display: none;
+              }
+            }
+          }
         }
       }
     }

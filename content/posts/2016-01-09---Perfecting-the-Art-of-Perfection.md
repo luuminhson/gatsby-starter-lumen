@@ -9,7 +9,8 @@ description: >-
   magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et
   ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit
   dolor. Sed non quam. In vel mi sit amet augue congue elementum.
-category: Design Inspiration
+categories:
+  - Design Inspiration
 tags:
   - Handwriting
   - Learning to write

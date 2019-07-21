@@ -32,14 +32,14 @@ export const query = graphql`
       fields {
         slug
         tagSlugs
-        categorySlug
+        categorySlugs
       }
       frontmatter {
         date
         description
         tags
         title
-        category
+        categories
         featuredImage {
           childImageSharp {
             resize(width: 1500, height: 1500) {
