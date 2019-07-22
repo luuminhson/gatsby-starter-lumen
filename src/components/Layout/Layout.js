@@ -1,11 +1,13 @@
 // @flow
 import React from 'react';
 import Helmet from 'react-helmet';
+import { graphql, StaticQuery } from 'gatsby';
 import Navigation from '../Navigation';
+import BottomNavigation from '../BottomNavigation';
 import Sidebar from '../Sidebar';
 import styles from './Layout.module.scss';
 
-class Layout extends React.Component {
+class PureLayout extends React.Component {
   constructor(props) {
     super(props);
 
@@ -25,6 +27,7 @@ class Layout extends React.Component {
 
   render() {
     const {
+      data,
       style,
       children,
       title,
@@ -37,9 +40,12 @@ class Layout extends React.Component {
 
     const { sidebar } = this.state;
 
+    const { bottomNav } = data.site.siteMetadata;
+
     return (
       <div>
         <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} onFeaturedImage={hasFeaturedImage} dark={dark} />
+        <BottomNavigation bottomNav={bottomNav} />
         <div
           className={[
             styles['layout'],
@@ -91,5 +97,25 @@ class Layout extends React.Component {
     );
   }
 }
+
+export const Layout = (props) => (
+  <StaticQuery
+      query={graphql`
+      query BottomNavigationQuery {
+        site {
+          siteMetadata {
+            bottomNav {
+              label
+              path
+              icon
+            }
+            darkNavigation
+          }
+        }
+      }
+    `}
+      render={(data) => <PureLayout {...props} data={data} />}
+  />
+);
 
 export default Layout;

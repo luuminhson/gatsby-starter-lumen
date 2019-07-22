@@ -12,6 +12,7 @@ module.exports = {
     copyright: siteConfig.copyright,
     disqusShortname: siteConfig.disqusShortname,
     menu: siteConfig.menu,
+    bottomNav: siteConfig.bottomNav,
     author: siteConfig.author,
     logo: siteConfig.logo,
     darkNavigation: siteConfig.darkNavigation

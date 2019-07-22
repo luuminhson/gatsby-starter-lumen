@@ -24,6 +24,23 @@ module.exports = {
       path: '/pages/contacts'
     }
   ],
+  bottomNav: [
+    {
+      label: 'Articles',
+      path: '/',
+      icon: '/icons/icon-blog.svg',
+    },
+    {
+      label: 'Works',
+      path: '/pages/works',
+      icon: '/icons/icon-work.svg',
+    },
+    {
+      label: 'Contact',
+      path: '/pages/contacts',
+      icon: '/icons/icon-about.svg',
+    }
+  ],
   author: {
     name: 'Miso',
     photo: '/media/miso-portrait.jpg',
