@@ -1,7 +1,7 @@
 ---
 template: post
 title: 'Johannes Gutenberg: The Birth of Movable Type'
-slug: /posts/the-birth-of-movable-type/
+slug: /posts/the-birth-of-movable-type
 draft: false
 date: '2017-08-18T22:12:03.284Z'
 featuredImage: /media/photo-1543363363-1fe620fe3d4b.jpeg

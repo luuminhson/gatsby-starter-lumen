@@ -1,7 +1,7 @@
 ---
 template: post
 title: A Brief History of Typography
-slug: /posts/a-brief-history-of-typography/
+slug: /posts/a-brief-history-of-typography
 draft: false
 date: '2016-02-02T22:40:32.169Z'
 featuredImage: /media/photo-1560470503-4c8a1eb44400.jpeg
