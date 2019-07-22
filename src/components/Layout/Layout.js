@@ -56,6 +56,9 @@ class Layout extends React.Component {
             <meta property="og:site_name" content={title} />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:title" content={title} />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <meta name="apple-mobile-web-app-status-bar-style" content={dark ? "black" : "default"} />
+            <meta name="apple-mobile-web-app-title" content="Miso" />
           </Helmet>
           <div
             className={[
