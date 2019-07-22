@@ -186,15 +186,15 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: siteConfig.title,
-        short_name: siteConfig.title,
+        short_name: 'Miso',
         start_url: '/',
-        background_color: '#FFF',
-        theme_color: '#F7A046',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
         display: 'standalone',
-        icon: 'static/favicon.png'
+        icon: 'static/favicon.svg'
       },
     },
-    'gatsby-plugin-offline',
+    'gatsby-plugin-offline', // must be placed after the 'gatsby-plugin-manifest'
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     {
