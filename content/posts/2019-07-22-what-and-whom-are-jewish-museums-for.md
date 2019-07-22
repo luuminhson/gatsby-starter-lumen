@@ -2,7 +2,7 @@
 template: post
 title: What and Whom Are Jewish Museums For?
 slug: /posts/the-birth-of-movable-type/what-and-whom-are-jewish-museums-for
-draft: true
+draft: false
 date: 2019-07-22T13:46:21.121Z
 featuredImage: /media/alexander-tsang-totrg2hk7ro-unsplash.jpg
 description: >-
