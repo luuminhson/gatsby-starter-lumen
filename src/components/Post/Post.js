@@ -39,8 +39,6 @@ const Post = ({ post }: Props) => {
     </div>
   );
 
-  console.log(categories);
-
   const postHeader = featuredImage ? (
     <BackgroundImage
       Tag="section"

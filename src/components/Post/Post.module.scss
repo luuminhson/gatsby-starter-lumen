@@ -33,14 +33,16 @@
       color: lighten($color-base, 20%);
       margin: 20px 0;
   
-      &__in-category {
-        margin: 0 4px;
-      }
-  
-      &__category-link {
-        color: lighten($color-base, 10%);
-        font-weight: 500;
-        text-decoration: underline;
+      &__categories {
+        &__list {
+          li {
+            a {
+              color: lighten($color-base, 10%);
+              font-weight: 500;
+              text-decoration: underline;
+            }
+          }
+        }
       }
     }
   }
@@ -86,6 +88,10 @@
 
               &:last-child:after {
                 display: none;
+              }
+
+              a {
+                color: darken($color-white, 10%);
               }
             }
           }

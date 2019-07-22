@@ -18,7 +18,6 @@ const PostTemplate = ({ data }: Props) => {
   return (
     <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} isPost hasFeaturedImage={hasFeaturedImage} style={`post`} dark={dark}>
       <Post post={data.markdownRemark} />
-      {console.log(hasFeaturedImage)}
     </Layout>
   );
 };

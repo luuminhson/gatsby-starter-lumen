@@ -10,10 +10,6 @@ type Props = {
   edges: Edges
 };
 
-const feedItemClass =[
-  styles['feed'],
-].join(' ');
-
 const feedLayout = (edge) => {
   if (edge.node.frontmatter.featuredImage) {
     return (
@@ -45,7 +41,7 @@ const feedLayout = (edge) => {
 }
 
 const Feed = ({ edges }: Props) => (
-  <div className={'feed'}>
+  <div className={styles['feed']}>
     {edges.map((edge) => (
       <div className={[styles['feed__item'], edge.node.frontmatter.featuredImage && styles['has_featured-image']].join(' ')} key={edge.node.fields.slug}>
         {feedLayout(edge)}
