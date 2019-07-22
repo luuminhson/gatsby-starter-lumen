@@ -81,7 +81,7 @@ class PureNavigation extends React.Component {
                     className
                 ].join(' ')}>
                     <div className={styles['navigation__inner']}>
-                        <Logo type={logo.type} logo={logo} dark={dark} />
+                        <Logo type={logo.type} logo={logo} dark={unfixed && isPost && onFeaturedImage ? true : dark} />
                         <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
                     </div>
                 </div>

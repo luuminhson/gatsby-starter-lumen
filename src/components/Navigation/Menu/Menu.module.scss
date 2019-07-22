@@ -42,7 +42,15 @@
     &.on_featured_image {
       .icon {
         span {
-          background: $color-white;
+          background: $color-light;
+        }
+      }
+    }
+
+    &.dark {
+      .icon {
+        span {
+          background-color: $color-light;
         }
       }
     }
