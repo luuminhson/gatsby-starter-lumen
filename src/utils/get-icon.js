@@ -32,6 +32,18 @@ const getIcon = (name: string) => {
     case 'rss':
       icon = ICONS.RSS;
       break;
+    case 'bottom_nav_home':
+      icon = ICONS.BOTNAV_HOME;
+      break;
+    case 'bottom_nav_blog':
+      icon = ICONS.BOTNAV_BLOG;
+      break;
+    case 'bottom_nav_works':
+      icon = ICONS.BOTNAV_WORKS;
+      break;
+    case 'bottom_nav_about':
+      icon = ICONS.BOTNAV_ABOUT;
+      break;
     default:
       icon = {};
       break;

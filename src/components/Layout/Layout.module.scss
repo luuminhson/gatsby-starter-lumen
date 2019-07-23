@@ -148,3 +148,10 @@
         }
     }
 }
+
+// Hide bottom navigation on large screens
+@include breakpoint-sm {
+    .bottomNav {
+        display: none;
+    }
+}
