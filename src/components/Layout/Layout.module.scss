@@ -3,7 +3,6 @@
 
 .layout {
     lost-center: $layout-width;
-    padding: 1.5rem 0 3rem;
 
     &.postStyle {
         lost-center: $layout-full-width;
@@ -13,10 +12,6 @@
             margin-top: -#{$nav-height};
             padding-top: 0;
         }
-    }
-
-    &.is_index {
-        padding-top: 0;
     }
 
     .mask {
