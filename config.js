@@ -37,7 +37,7 @@ module.exports = {
     },
     {
       label: 'Works',
-      path: '/pages/works',
+      path: '/works',
       icon: 'bottom_nav_works',
     },
     {
