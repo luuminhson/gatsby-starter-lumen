@@ -26,19 +26,24 @@ module.exports = {
   ],
   bottomNav: [
     {
-      label: 'Articles',
+      label: 'Home',
       path: '/',
-      icon: '/icons/icon-blog.svg',
+      icon: 'bottom_nav_home',
+    },
+    {
+      label: 'Articles',
+      path: '/blog',
+      icon: 'bottom_nav_blog',
     },
     {
       label: 'Works',
       path: '/pages/works',
-      icon: '/icons/icon-work.svg',
+      icon: 'bottom_nav_works',
     },
     {
-      label: 'Contact',
-      path: '/pages/contacts',
-      icon: '/icons/icon-about.svg',
+      label: 'About',
+      path: '/pages/about',
+      icon: 'bottom_nav_about',
     }
   ],
   author: {
