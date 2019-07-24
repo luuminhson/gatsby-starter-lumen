@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styles from './Button.module.scss';
 
-const PureButton = ({ link, label, className, onDark }) => (
+const PureButton = ({ link, rel, label, className, onDark }) => (
   <div className={className} >
-    <Link className={[styles['button'], onDark && styles['onDark']].join(' ')} to={link}>{label}</Link>
+    <Link className={[styles['button'], onDark && styles['onDark']].join(' ')} to={link} rel={rel}>{label}</Link>
   </div>
 );
 
