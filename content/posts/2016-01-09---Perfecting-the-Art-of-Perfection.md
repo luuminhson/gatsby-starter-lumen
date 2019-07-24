@@ -1,7 +1,7 @@
 ---
 template: post
 title: Perfecting the Art of Perfection
-slug: /posts/perfecting-the-art-of-perfection
+slug: /blog/perfecting-the-art-of-perfection
 draft: false
 date: '2016-09-01T23:46:37.121Z'
 featuredImage: /media/photo-1554176259-aa961fc32671.jpeg

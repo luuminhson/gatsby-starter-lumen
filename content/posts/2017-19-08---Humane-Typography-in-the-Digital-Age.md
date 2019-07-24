@@ -1,7 +1,7 @@
 ---
 template: post
 title: Humane Typography in the Digital Age
-slug: /posts/humane-typography-in-the-digital-age
+slug: /blog/humane-typography-in-the-digital-age
 draft: false
 date: '2017-08-19T22:40:32.169Z'
 featuredImage: /media/photo-1561871733-40a3338b8cb4.jpeg

@@ -8,25 +8,25 @@ module.exports = async (graphql, actions) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        filter: { frontmatter: { categories: { in: ["Design Culture"] }, template: { eq: "post" }, draft: { ne: true } } }
+      blog: allMarkdownRemark(
+        filter: { frontmatter: { categories: { nin: ["Work"] }, template: { eq: "post" }, draft: { ne: true } } }
       ) { totalCount }
     }
   `);
 
   const { postsPerPage } = siteConfig;
-  const numPages = Math.ceil(result.data.allMarkdownRemark.totalCount / postsPerPage);
+  const numPages = Math.ceil(result.data.blog.totalCount / postsPerPage);
 
   for (let i = 0; i < numPages; i += 1) {
     createPage({
-      path: i === 0 ? '/blog' : `/blog/page/${i}`,
+      path: i === 0 ? `/blog` : `/blog/page/${i}`,
       component: path.resolve('./src/templates/blog-template.js'),
       context: {
         currentPage: i,
         postsLimit: postsPerPage,
         postsOffset: i * postsPerPage,
-        prevPagePath: i <= 1 ? '/' : `/page/${i - 1}`,
-        nextPagePath: `/page/${i + 1}`,
+        prevPagePath: i <= 1 ? `/blog` : `/blog/page/${i - 1}`,
+        nextPagePath: `/blog/page/${i + 1}`,
         hasPrevPage: i !== 0,
         hasNextPage: i !== numPages - 1
       }

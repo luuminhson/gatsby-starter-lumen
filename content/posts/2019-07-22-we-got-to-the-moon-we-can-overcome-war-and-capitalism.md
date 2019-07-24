@@ -1,7 +1,7 @@
 ---
 template: post
 title: We Got to the Moon. We Can Overcome War and Capitalism.
-slug: /posts/we-got-to-the-moon
+slug: /blog/we-got-to-the-moon
 draft: false
 date: 2019-07-24T14:09:00.000Z
 featuredImage: /media/photo-1446941611757-91d2c3bd3d45.jpeg
@@ -11,9 +11,9 @@ description: >-
   computer technology that would get laughed out of the room now by any high-end
   smartphone in the land.
 categories:
-  - cosmos
-  - science
-  - culture
+  - Cosmos
+  - Science
+  - Culture
 tags:
   - astronaut
   - human
