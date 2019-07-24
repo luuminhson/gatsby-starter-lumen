@@ -208,6 +208,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-flow',
+    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
