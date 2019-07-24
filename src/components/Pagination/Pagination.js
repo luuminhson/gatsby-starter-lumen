@@ -2,6 +2,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from 'gatsby';
+import Button from '../Button';
 import { PAGINATION } from '../../constants';
 import styles from './Pagination.module.scss';
 
@@ -31,11 +32,13 @@ const Pagination = ({
   });
 
   const prevBtn = (
-    <Link rel="prev" to={prevPagePath} className={prevClassName}>{PAGINATION.PREV_PAGE}</Link>
+    <Button rel="prev" link={prevPagePath} className={prevClassName} label={PAGINATION.PREV_PAGE} />
+    // <Link rel="prev" to={prevPagePath} className={prevClassName}>{PAGINATION.PREV_PAGE}</Link>
   );
 
   const nextBtn = (
-    <Link rel="next" to={nextPagePath} className={nextClassName}>{PAGINATION.NEXT_PAGE}</Link>
+    <Button rel="next" link={nextPagePath} className={nextClassName} label={PAGINATION.NEXT_PAGE} />
+    // <Link rel="next" to={nextPagePath} className={nextClassName}>{PAGINATION.NEXT_PAGE}</Link>
   );
 
   return (

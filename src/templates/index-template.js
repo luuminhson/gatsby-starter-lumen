@@ -32,14 +32,12 @@ const IndexTemplate = ({ data, pageContext }: Props) => {
     <Layout title={pageTitle} description={siteSubtitle} isIndex dark={dark}>
       <Page>
         <Feed edges={blogPost} />
-        { hasNextPage &&
           <Pagination
             prevPagePath={prevPagePath}
             nextPagePath={nextPagePath}
             hasPrevPage={hasPrevPage}
             hasNextPage={hasNextPage}
           />
-        }
       </Page>
     </Layout>
   );
