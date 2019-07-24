@@ -20,7 +20,7 @@ module.exports = async (graphql, actions) => {
   for (let i = 0; i < numPages; i += 1) {
     createPage({
       path: i === 0 ? '/works' : `/works/page/${i}`,
-      component: path.resolve('./src/templates/work-template.js'),
+      component: path.resolve('./src/templates/work-list-template.js'),
       context: {
         currentPage: i,
         postsLimit: postsPerPage,

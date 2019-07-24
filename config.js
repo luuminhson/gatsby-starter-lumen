@@ -12,16 +12,20 @@ module.exports = {
   darkNavigation: false,
   menu: [
     {
-      label: 'Articles',
+      label: 'Home',
       path: '/'
     },
     {
-      label: 'About',
-      path: '/pages/about'
+      label: 'Articles',
+      path: '/blog'
     },
     {
-      label: 'Contact',
-      path: '/pages/contacts'
+      label: 'Works',
+      path: '/works'
+    },
+    {
+      label: 'About',
+      path: '/about'
     }
   ],
   bottomNav: [
@@ -42,7 +46,7 @@ module.exports = {
     },
     {
       label: 'About',
-      path: '/pages/about',
+      path: '/about',
       icon: 'bottom_nav_about',
     }
   ],

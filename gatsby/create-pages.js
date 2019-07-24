@@ -32,7 +32,7 @@ const createPages = async ({ graphql, actions }) => {
   // Work list
   createPage({
     path: '/works',
-    component: path.resolve('./src/templates/work-template.js')
+    component: path.resolve('./src/templates/work-list-template.js')
   });
 
   // Blog
