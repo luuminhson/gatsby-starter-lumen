@@ -8,11 +8,12 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: space-around;
 
     &-item {
-      padding: 0 24px;
+      padding: 0;
       margin: 0;
-      display: inline-block;
 
       &-link {
         display: block;

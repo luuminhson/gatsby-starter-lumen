@@ -45,7 +45,7 @@ class PureLayout extends React.Component {
     return (
       <div>
         <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} onFeaturedImage={hasFeaturedImage} dark={dark} />
-        <BottomNavigation className={styles['bottomNav']} bottomNav={bottomNav} isIndex={isIndex} />
+        <BottomNavigation className={styles['bottomNav']} bottomNav={bottomNav} />
         <div
           className={[
             styles['layout'],

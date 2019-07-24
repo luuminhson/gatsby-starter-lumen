@@ -13,11 +13,10 @@ type Props = {
         icon: string
     }[],
     dark: bool,
-    isIndex: bool,
     className: string
 };
 
-const BottomNavigation = ({ bottomNav, dark, isIndex, className }: Props) => (
+const BottomNavigation = ({ bottomNav, dark, className }: Props) => (
     <div className={[
         styles['wrapper'],
         dark && styles['dark'],
@@ -31,7 +30,7 @@ const BottomNavigation = ({ bottomNav, dark, isIndex, className }: Props) => (
                             to={item.path}
                             className={styles['bottomNav__list-item-link']}
                             activeClassName={styles['bottomNav__list-item-link--active']}
-                            partiallyActive={isIndex ? true : false}
+                            partiallyActive={item.path === '/' ? false : true}
                         >
                             <Icon className={styles['bottomNav__list-item-link__icon']} icon={getIcon(item.icon)} />
                             <span className={styles['bottomNav__list-item-link__label']}>{item.label}</span>

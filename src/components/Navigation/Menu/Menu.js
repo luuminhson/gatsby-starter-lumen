@@ -31,6 +31,7 @@ const Menu = ({ menu, burgerClick, isPost, unfixed, dark, onFeaturedImage }: Pro
                 to={item.path}
                 className={styles['menu__list-item-link']}
                 activeClassName={styles['menu__list-item-link--active']}
+                partiallyActive={item.path === '/' ? false : true}
               >
                 {item.label}
               </Link>
