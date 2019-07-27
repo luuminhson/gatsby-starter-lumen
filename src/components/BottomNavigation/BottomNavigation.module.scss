@@ -32,7 +32,7 @@
                     justify-content: space-between;
                     font-family: $typographic-font-family-heading;
                     font-size: 0.7rem;
-                    color: lighten($color-base, 40%);
+                    color: $color-base;
                     padding-top: 8px;
 
                     &__icon {

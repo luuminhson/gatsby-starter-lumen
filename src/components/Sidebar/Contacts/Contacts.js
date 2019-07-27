@@ -20,6 +20,8 @@ const Contacts = ({ contacts }: Props) => (
             href={getContactHref(name, contacts[name])}
             rel="noopener noreferrer"
             target="_blank"
+            title={name}
+            aria-label={name}
           >
             <Icon icon={getIcon(name)} />
           </a>

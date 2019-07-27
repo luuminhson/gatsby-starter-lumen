@@ -215,7 +215,7 @@ module.exports = {
         fonts: [
           {
             family: `Merriweather Sans`,
-            variants: [`400`, `400i`, `700`, `700i`],
+            variants: [`400`, `700`, `800`],
             subsets: [`latin-ext`, `vietnamese`]
           },
           {
