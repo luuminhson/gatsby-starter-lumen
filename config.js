@@ -4,11 +4,11 @@ module.exports = {
   url: 'https://luuminhson.com',
   pathPrefix: '/',
   title: 'Works & notes by Miso',
-  subtitle: 'A digital product designer.',
+  subtitle: 'Some scattered notes of someone.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 10,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: '',
   darkNavigation: false,
   menu: [
     {

@@ -19,6 +19,7 @@ class PureNavigation extends React.Component {
 
     headRoomUnfix = () => {
         this.setState({
+            // pinned: false,
             unfixed: true
         });
     }
@@ -70,13 +71,14 @@ class PureNavigation extends React.Component {
                     styles['headroom'],
                     unpinned && styles['unpinned'],
                     pinned && styles['pinned'],
-                    isPost && unfixed && styles['unfixed'],
+                    ( isIndex || isPost ) && unfixed && styles['unfixed'],
                     isPost && onFeaturedImage && styles['on_featured_image'],
                 ].join(' ')}
             >
                 <div className={[
                     styles['navigation'],
                     isPost && styles['is_post'],
+                    isIndex && styles['is_index'],
                     dark && styles['dark'],
                     className
                 ].join(' ')}>

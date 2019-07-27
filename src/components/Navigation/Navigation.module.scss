@@ -7,18 +7,6 @@
     width: 100vw;
     z-index: 2000;
 
-    .navStopper {
-        position: fixed;
-        top: 100px;
-        left: 0;
-        display: block;
-        width: 0;
-        height: 0;
-        opacity: 0;
-        visibility: hidden;
-        z-index: -100;
-    }
-
     &__inner {
         position: relative;
         padding: 0 24px;
@@ -69,7 +57,6 @@
         &.on_featured_image {
             .navigation {
                 &:before {
-                    // transform: translate3d(0, -100%, 0);
                     opacity: 0;
                     box-shadow: none;
                     transition: all 0.4s ease-in-out;
@@ -85,6 +72,16 @@
                     .backButton {
                         color: $color-white;
                     }
+                }
+            }
+        }
+
+        .navigation {
+            &.is_index {
+                &:before {
+                    opacity: 0;
+                    box-shadow: none;
+                    transition: all 0.4s ease-in-out;
                 }
             }
         }

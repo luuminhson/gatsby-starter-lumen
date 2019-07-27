@@ -67,7 +67,6 @@ const Post = ({ post }: Props) => {
 
   return (
     <div className={styles['post']}>
-      {console.log(featuredImage)}
       <div className={styles['post__hero']}>
         {postHeader()}
       </div>
