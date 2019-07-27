@@ -34,6 +34,8 @@
       margin: 20px 0;
   
       &__categories {
+        display: inline-block;
+
         &__list {
           li {
             a {
@@ -162,7 +164,7 @@
 
     &__header-content {
       max-width: $layout-post-width;
-      padding: 0;
+      padding: 20px 0 0;
     }
 
   }

@@ -39,25 +39,37 @@ const Post = ({ post }: Props) => {
     </div>
   );
 
-  const postHeader = featuredImage ? (
-    <BackgroundImage
-      Tag="section"
-      className={styles['post__heroImage']}
-      fluid={featuredImage.childImageSharp.fluid}
-      backgroundColor={'#040e18'}
-    >
-      <div className={styles['post__heroImage__mask']} />
-      {headerContent}
-    </BackgroundImage>
-  ) : (
-      {headerContent}
-    );
+  function isEmpty(obj) {
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key))
+        return false;
+    }
+    return true;
+  }
+
+  const postHeader = () => {
+    if (!isEmpty(featuredImage)) {
+      return (
+        <BackgroundImage
+          Tag="section"
+          className={styles['post__heroImage']}
+          fluid={featuredImage.childImageSharp.fluid}
+          backgroundColor={'#040e18'}
+        >
+          <div className={styles['post__heroImage__mask']} />
+          {headerContent}
+        </BackgroundImage>
+      );
+    } else {
+      return headerContent;
+    }
+  }
 
   return (
     <div className={styles['post']}>
-
+      {console.log(featuredImage)}
       <div className={styles['post__hero']}>
-        {postHeader}
+        {postHeader()}
       </div>
 
       <div className={styles['post__content']}>
