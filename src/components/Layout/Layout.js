@@ -40,7 +40,7 @@ class PureLayout extends React.Component {
 
     const { sidebar } = this.state;
 
-    const { bottomNav } = data.site.siteMetadata;
+    const { bottomNav, subtitle } = data.site.siteMetadata;
 
     return (
       <div>
@@ -91,6 +91,7 @@ class PureLayout extends React.Component {
             </div>
             <Sidebar sidebar={sidebar} />
           </div>
+          {isIndex && <div className={styles['subTitle']}>{subtitle}</div>}
           {children}
         </div>
       </div>
@@ -104,12 +105,12 @@ export const Layout = (props) => (
       query BottomNavigationQuery {
         site {
           siteMetadata {
+            subtitle
             bottomNav {
               label
               path
               icon
             }
-            darkNavigation
           }
         }
       }
