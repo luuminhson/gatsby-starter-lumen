@@ -83,7 +83,7 @@
           height: 60px;
           line-height: 60px;
           display: block;
-          color: $color-gray;
+          color: lighten($color-base, 20%);
 
           &:hover,
           &:focus {
