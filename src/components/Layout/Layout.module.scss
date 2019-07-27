@@ -10,6 +10,7 @@
             position: absolute;
             top: 0;
             left: 0;
+            display: block;
             width: 100%;
             height: 300px;
             background: $color-nav-light;
@@ -132,11 +133,21 @@
         padding: 0 1.5rem;
         margin-top: 24px;
         margin-bottom: 12px;
+
+        @include breakpoint-sm {
+            display: none;
+        }
     }
     
     // Min-width 685px
     
     @include breakpoint-sm {
+        &.is_index {
+            &:before {
+                display: none;
+            }
+        }
+
         .sidebar__wrapper {
             max-width: $sidebar-max-width-desktop;
 

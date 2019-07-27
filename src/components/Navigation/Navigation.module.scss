@@ -85,6 +85,18 @@
                 }
             }
         }
+
+        @include breakpoint-sm {
+            .navigation {
+                &.is_index {
+                    &:before {
+                        opacity: 1;
+                        background: $color-nav-light;
+                        box-shadow: $nav-shadow-light;
+                    }
+                }
+            }
+        }
     }
 
     &.unpinned {
