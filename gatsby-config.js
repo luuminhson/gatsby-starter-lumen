@@ -216,12 +216,14 @@ module.exports = {
           {
             family: `Merriweather Sans`,
             variants: [`400`, `700`, `800`],
-            subsets: [`latin-ext`, `vietnamese`]
+            subsets: [`latin-ext`, `vietnamese`],
+            fontDisplay: `swap`
           },
           {
             family: `Lora`,
             variants: [`400`, `400i`, `700`, `700i`],
-            subsets: [`latin-ext`, `vietnamese`]
+            subsets: [`latin-ext`, `vietnamese`],
+            fontDisplay: `fallback`
           },
         ],
       },
