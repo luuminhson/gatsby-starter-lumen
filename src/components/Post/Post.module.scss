@@ -52,6 +52,7 @@
   &__heroImage {
     position: relative;
     height: 60vh;
+    min-height: 320px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -105,13 +106,13 @@
   &__footer {
     max-width: $layout-post-width;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 24px calc(#{$bottom-nav-height} + 32px);
   }
 
   &__comments {
     max-width: $layout-post-width;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 24px;
   }
 
   &__home-button {
@@ -141,14 +142,6 @@
 
 @include breakpoint-md {
   .post {
-    &__footer {
-      padding: 0;
-    }
-
-    &__comments {
-      padding: 0;
-    }
-
     &__home-button {
       position: fixed;
       max-width: auto;

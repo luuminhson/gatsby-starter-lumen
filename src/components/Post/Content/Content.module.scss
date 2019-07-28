@@ -60,8 +60,6 @@
 
 @include breakpoint-md {
   .content {
-    padding: 0;
-
     &__title {
       font-size: $typographic-base-font-size * 3;
       @include line-height(2.25);
