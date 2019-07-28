@@ -44,6 +44,7 @@ class PureNavigation extends React.Component {
         const {
             data,
             isIndex,
+            isWork,
             isPost,
             onFeaturedImage,
             burgerClick,
@@ -71,20 +72,21 @@ class PureNavigation extends React.Component {
                     styles['headroom'],
                     unpinned && styles['unpinned'],
                     pinned && styles['pinned'],
-                    ( isIndex || isPost ) && unfixed && styles['unfixed'],
-                    isPost && onFeaturedImage && styles['on_featured_image'],
+                    ( isIndex || isPost || isWork ) && unfixed && styles['unfixed'],
+                    ( isPost || isWork ) && onFeaturedImage && styles['on_featured_image'],
                 ].join(' ')}
             >
                 <div className={[
                     styles['navigation'],
                     isPost && styles['is_post'],
+                    isWork && styles['is_work'],
                     isIndex && styles['is_index'],
                     dark && styles['dark'],
                     className
                 ].join(' ')}>
                     <div className={styles['navigation__inner']}>
-                        <Logo type={logo.type} logo={logo} dark={unfixed && isPost && onFeaturedImage ? true : dark} />
-                        <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
+                        <Logo type={logo.type} logo={logo} dark={unfixed && ( isPost || isWork ) && onFeaturedImage ? true : dark} />
+                        <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} isWork={isWork} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
                     </div>
                 </div>
             </Headroom>

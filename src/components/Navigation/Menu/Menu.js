@@ -10,19 +10,20 @@ type Props = {
   }[],
   burgerClick: bool,
   isPost: bool,
+  isWork: bool,
   unfixed: bool,
   dark: bool,
   onFeaturedImage: bool
 };
 
-const Menu = ({ menu, burgerClick, isPost, unfixed, dark, onFeaturedImage }: Props) => (
+const Menu = ({ menu, burgerClick, isPost, isWork, unfixed, dark, onFeaturedImage }: Props) => (
   <div className={[
     styles['wrapper'],
     unfixed && styles['unfixed'],
     dark && styles['dark'],
     onFeaturedImage && styles['on_featured_image']
   ].join(' ')}>
-    {!isPost && (
+    {!isWork && !isPost && (
       <nav className={styles['menu']}>
         <ul className={styles['menu__list']}>
           {menu.map((item) => (

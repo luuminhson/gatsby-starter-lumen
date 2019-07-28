@@ -18,7 +18,8 @@
         }
     }
 
-    &.postStyle {
+    &.postStyle,
+    &.workStyle {
         lost-center: $layout-full-width;
         background-color: $color-white;
 

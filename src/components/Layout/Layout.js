@@ -34,6 +34,7 @@ class PureLayout extends React.Component {
       description,
       isIndex,
       isPost,
+      isWork,
       dark,
       hasFeaturedImage
     } = this.props;
@@ -44,13 +45,14 @@ class PureLayout extends React.Component {
 
     return (
       <div>
-        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} onFeaturedImage={hasFeaturedImage} dark={dark} />
+        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} isWork={isWork} onFeaturedImage={hasFeaturedImage} dark={dark} />
         <BottomNavigation className={styles['bottomNav']} bottomNav={bottomNav} />
         <div
           className={[
             styles['layout'],
             sidebar === true && styles['noScroll'],
             style === 'post' && styles['postStyle'],
+            style === 'work' && styles['workStyle'],
             isIndex && styles['is_index'],
             hasFeaturedImage && styles['has_featured_image']
           ].join(' ')}
