@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Location } from '@reach/router';
 import Layout from '../components/Layout';
 import Work from '../components/Work';
 import { useSiteMetadata } from '../hooks';
@@ -15,10 +16,27 @@ const WorkTemplate = ({ data }: Props) => {
   const metaDescription = workDescription !== null ? workDescription : siteSubtitle;
   const hasFeaturedImage = null !== data.markdownRemark.frontmatter.featuredImage;
 
+  const checkLocationState = (location) => {
+    const locationState = location.state;
+
+    if (locationState == null) {
+      return '/works';
+    } else {
+      const hasLocationState = location.state.hasOwnProperty('prevUrl');
+      const passedBackLink = hasLocationState ? location.state.prevUrl : '/works';
+
+      return passedBackLink;
+    }
+  }
+
   return (
-    <Layout title={`${workTitle} - ${siteTitle}`} description={metaDescription} isWork hasFeaturedImage={hasFeaturedImage} style={'work'} dark={dark}>
-      <Work work={data.markdownRemark} />
-    </Layout>
+    <Location>
+      {({ location }) => (
+        <Layout title={`${workTitle} - ${siteTitle}`} description={metaDescription} isWork hasFeaturedImage={hasFeaturedImage} style={'work'} dark={dark} from={checkLocationState(location)}>
+          <Work work={data.markdownRemark} />
+        </Layout>
+      )}
+    </Location>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '../LinkWithPrev';
 import styles from './Button.module.scss';
 
-const PureButton = ({ link, rel, label, className, onDark }) => (
+const PureButton = ({ link, rel, label, state, className, onDark }) => (
   <div className={className} >
-    <Link className={[styles['button'], onDark && styles['onDark']].join(' ')} to={link} rel={rel}>{label}</Link>
+    <Link className={[styles['button'], onDark && styles['onDark']].join(' ')} state={state} to={link} rel={rel}>{label}</Link>
   </div>
 );
 

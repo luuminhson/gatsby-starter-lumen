@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '../LinkWithPrev';
 import BackgroundImage from 'gatsby-background-image';
 import Button from '../Button';
 import type { Edges } from '../../types';

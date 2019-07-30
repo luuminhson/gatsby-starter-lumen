@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '../../LinkWithPrev';
 import styles from './Categories.module.scss';
 
 type Props = {

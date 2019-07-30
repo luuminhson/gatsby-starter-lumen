@@ -1,8 +1,7 @@
 // @flow
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '../LinkWithPrev';
 import moment from 'moment';
-// import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
 import SectionTitle from '../SectionTitle';
 import type { Edges } from '../../types';

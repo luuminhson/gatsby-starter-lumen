@@ -49,6 +49,7 @@ class PureNavigation extends React.Component {
             onFeaturedImage,
             burgerClick,
             dark,
+            from,
             className
         } = this.props;
 
@@ -59,7 +60,21 @@ class PureNavigation extends React.Component {
             logo
         } = data.site.siteMetadata;
 
-        const backButton = <Link to='/' className={styles['backButton']}>←</Link>;
+        const isDetailScreen = isWork || isPost;
+
+        const backLink = () => {
+            if ('' !== from) {
+                return from;
+            }
+
+            return '/';
+        }
+
+        const backButton = <Link to={backLink()} className={styles['backButton']}>←</Link>;
+
+        const siteLogo = <Logo type={logo.type} logo={logo} dark={unfixed && isDetailScreen && onFeaturedImage ? true : dark} />;
+
+        const navLeft = isDetailScreen ? backButton : siteLogo;
 
         return (
             <Headroom
@@ -72,8 +87,8 @@ class PureNavigation extends React.Component {
                     styles['headroom'],
                     unpinned && styles['unpinned'],
                     pinned && styles['pinned'],
-                    ( isIndex || isPost || isWork ) && unfixed && styles['unfixed'],
-                    ( isPost || isWork ) && onFeaturedImage && styles['on_featured_image'],
+                    (isIndex || isDetailScreen) && unfixed && styles['unfixed'],
+                    isDetailScreen && onFeaturedImage && styles['on_featured_image'],
                 ].join(' ')}
             >
                 <div className={[
@@ -85,7 +100,7 @@ class PureNavigation extends React.Component {
                     className
                 ].join(' ')}>
                     <div className={styles['navigation__inner']}>
-                        <Logo type={logo.type} logo={logo} dark={unfixed && ( isPost || isWork ) && onFeaturedImage ? true : dark} />
+                        {navLeft}
                         <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} isWork={isWork} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
                     </div>
                 </div>
