@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { withPrefix, Link } from 'gatsby';
+import { Link } from '../LinkWithPrev';
 import { getIcon } from '../../utils';
 import Icon from '../Icon';
 import styles from './BottomNavigation.module.scss';
