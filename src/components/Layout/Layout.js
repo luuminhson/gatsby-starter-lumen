@@ -33,8 +33,10 @@ class PureLayout extends React.Component {
       title,
       description,
       isIndex,
-      isPost,
+      isBlog,
       isWork,
+      isIllussion,
+      isPost,
       dark,
       hasFeaturedImage,
       from
@@ -54,7 +56,10 @@ class PureLayout extends React.Component {
             sidebar === true && styles['noScroll'],
             style === 'post' && styles['postStyle'],
             style === 'work' && styles['workStyle'],
-            isIndex && styles['is_index'],
+            isIndex && styles['isIndex'],
+            isBlog && styles['isBlog'],
+            isWork && styles['isWork'],
+            isIllussion && styles['isIllussion'],
             hasFeaturedImage && styles['has_featured_image']
           ].join(' ')}
         >

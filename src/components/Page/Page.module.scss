@@ -2,8 +2,6 @@
 @import '../../assets/scss/mixins';
 
 .page {
-  @include margin-bottom(2);
-
   &__inner {
     padding: 25px 20px;
   }
@@ -26,8 +24,6 @@
 
 @include breakpoint-sm {
   .page {
-    // lost-column: 7/12;
-
     &__inner {
       padding: 30px 20px;
     }
@@ -38,10 +34,14 @@
 
 @include breakpoint-md {
   .page {
-    // lost-column: 2/3;
+    @include margin-bottom(2);
 
     &__inner {
       padding: 40px 35px;
+    }
+
+    &.withSidebar {
+      lost-column: 8/12;
     }
 
   }

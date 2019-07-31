@@ -41,6 +41,7 @@ $button-border-radius: 20px;
 // Layout
 $layout-post-single-width: 945px;
 $layout-post-width: $layout-post-single-width - 200px;
+$layout-blog-width: 1240px;
 $layout-full-width: 100%;
 
 $layout-width: 960px;
@@ -53,5 +54,6 @@ $nav-height: 60px;
 $bottom-nav-height: 56px;
 $nav-shadow-light: 0px 12px 40px -12px rgba(9,13,23,0.12);
 $nav-shadow-dark: 0px 12px 40px -12px rgba(9,13,23,0.4);
+$block-item-shadow: 0 16px 40px -12px rgba(0,0,0,0.2);
 $sidebar-max-width-mobile: 100vw;
 $sidebar-max-width-desktop: 320px;

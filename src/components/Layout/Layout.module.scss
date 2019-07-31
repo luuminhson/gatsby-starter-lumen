@@ -3,8 +3,9 @@
 
 .layout {
     lost-center: $layout-width;
+    @include margin-bottom(2);
 
-    &.is_index {
+    &.isIndex {
         &:before {
             content: '';
             position: absolute;
@@ -143,7 +144,7 @@
     // Min-width 685px
     
     @include breakpoint-sm {
-        &.is_index {
+        &.isIndex {
             &:before {
                 display: none;
             }
@@ -170,7 +171,11 @@
     // Min-width 960px
     
     @include breakpoint-md {
-        .sidebar {
+        @include margin-bottom(0);
+
+        &.isBlog {
+            lost-center: $layout-blog-width;
+            lost-utility: clearfix;
         }
     }
 }

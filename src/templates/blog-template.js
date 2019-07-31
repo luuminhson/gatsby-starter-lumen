@@ -2,10 +2,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Feed from '../components/Feed';
 import Page from '../components/Page';
+import StaticSidebar from '../components/StaticSidebar';
+import Feed from '../components/Feed';
 import Pagination from '../components/Pagination';
-import { useSiteMetadata } from '../hooks';
+import { useSiteMetadata, useCategoriesList, useTagsList } from '../hooks';
 import type { PageContext, AllMarkdownRemark } from '../types';
 
 type Props = {
@@ -15,6 +16,9 @@ type Props = {
 
 const BlogTemplate = ({ data, pageContext }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle, darkNavigation: dark } = useSiteMetadata();
+  const hasCategories = useCategoriesList().length > 0;
+  const hasTags = useTagsList().length > 0;
+  const hasSidebar = (hasCategories || hasTags);
 
   const {
     currentPage,
@@ -29,16 +33,19 @@ const BlogTemplate = ({ data, pageContext }: Props) => {
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle} dark={dark}>
-      <Page>
+    <Layout title={pageTitle} description={siteSubtitle} dark={dark} isBlog>
+      <Page isBlog withSidebar={hasSidebar}>
         <Feed edges={edges} />
-        <Pagination
-          prevPagePath={prevPagePath}
-          nextPagePath={nextPagePath}
-          hasPrevPage={hasPrevPage}
-          hasNextPage={hasNextPage}
-        />
+        {hasNextPage &&
+          <Pagination
+            prevPagePath={prevPagePath}
+            nextPagePath={nextPagePath}
+            hasPrevPage={hasPrevPage}
+            hasNextPage={hasNextPage}
+          />
+        }
       </Page>
+      {hasSidebar && <StaticSidebar isBlog />}
     </Layout>
   );
 };
