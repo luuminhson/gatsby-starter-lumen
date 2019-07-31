@@ -10,9 +10,8 @@
     padding: 24px;
     background: $color-white;
     @include margin-bottom(1);
-    border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    box-shadow: $block-item-shadow;
 
     &:last-child {
       @include margin-bottom(.5);
@@ -94,13 +93,13 @@
           left: 0;
           top: 0;
           background: rgba(0,0,0,0.4);
-          background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 100%);
+          background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.12) 100%);
           z-index: 1;
         }
       }
 
       .feed__item-info {
-        margin-top: 150px;
+        margin-top: 200px;
         position: relative;
         z-index: 2;
       }

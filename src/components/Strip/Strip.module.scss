@@ -45,7 +45,7 @@ $scrollbar-hidden-padding: 4.2rem;
             align-items: flex-end;
             overflow: hidden;
             background-color: $color-white;
-            box-shadow: 0 16px 40px -12px rgba(0,0,0,0.2);
+            box-shadow: $block-item-shadow;
 
             &__link {
                 display: block;
