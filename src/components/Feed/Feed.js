@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Link } from '../LinkWithPrev';
+import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import Button from '../Button';
 import type { Edges } from '../../types';
@@ -13,30 +14,32 @@ type Props = {
 const feedLayout = (edge) => {
   if (edge.node.frontmatter.featuredImage) {
     return (
-      <BackgroundImage
-        Tag="section"
-        className={styles['feed__item-postThumbnail']}
-        fluid={edge.node.frontmatter.featuredImage.childImageSharp.fluid}
-        backgroundColor={'#040e18'}
-      >
-        <Link className={styles['feed__item-postThumbnail-link']} to={edge.node.fields.slug} />
+      <div>
+        <Link className={styles['feed__item-postThumbnail-link']} to={edge.node.fields.slug}>
+          <Img
+            className={styles['feed__item-postThumbnail']}
+            fluid={edge.node.frontmatter.featuredImage.childImageSharp.fluid}
+          />
+        </Link>
         <div className={styles['feed__item-info']}>
-          <h2 className={styles['feed__item-title']}>
-            <Link className={styles['feed__item-title-link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
-          </h2>
-          <p className={styles['feed__item-description']}>{edge.node.frontmatter.description}</p>
-          <Button className={styles['feed__item-readmore']} link={edge.node.fields.slug} label='Read More' onDark />
+          <h3 className={styles['feed__item-info__title']}>
+            <Link className={styles['feed__item-info__title__link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
+          </h3>
+          <p className={styles['feed__item-info__description']}>{edge.node.frontmatter.description}</p>
+          <Button className={styles['feed__item-info__readmore']} link={edge.node.fields.slug} label='Read More' onDark />
         </div>
-      </BackgroundImage>
-      );
+      </div>
+    );
   } else {
-    return (<div className={styles['feed__item-info']}>
-      <h2 className={styles['feed__item-title']}>
-        <Link className={styles['feed__item-title-link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
-      </h2>
-      <p className={styles['feed__item-description']}>{edge.node.frontmatter.description}</p>
-      <Button className={styles['feed__item-readmore']} link={edge.node.fields.slug} label='Read More' />
-    </div>);
+    return (
+      <div className={styles['feed__item-info']}>
+        <h3 className={styles['feed__item-info__title']}>
+          <Link className={styles['feed__item-info__title__link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
+        </h3>
+        <p className={styles['feed__item-info__description']}>{edge.node.frontmatter.description}</p>
+        <Button className={styles['feed__item-info__readmore']} link={edge.node.fields.slug} label='Read More' />
+      </div>
+    );
   }
 }
 

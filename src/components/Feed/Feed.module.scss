@@ -17,107 +17,50 @@
       @include margin-bottom(.5);
     }
 
-    &-title {
-      font-size: $typographic-base-font-size * 1.6875;
-      @include line-height(1.5);
-      @include margin-top(0);
-      @include margin-bottom(.5);
-
-      &-link {
-        color: $color-base;
-
-        &:hover,
-        &:focus {
+    &-info {
+      &__title {
+        font-size: $typographic-base-font-size * 1.2875;
+        line-height: 32px;
+        margin: 12px 0;
+  
+        &__link {
           color: $color-base;
-          border-bottom: 1px solid $color-base;
-        }
-
-      }
-
-    }
-
-    &-description {
-      font-size: $typographic-base-font-size;
-      @include line-height(1);
-      @include margin-bottom(.75);
-    }
-
-    &-meta {
-      &-time {
-        font-size: $typographic-small-font-size;
-        color: $color-base;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-
-      &-divider {
-        margin: 0 5px;
-      }
-
-      &-category {
-        &-link {
-          font-size: $typographic-small-font-size;
-          color: $color-secondary;
-          font-weight: 600;
-          text-transform: uppercase;
-
+  
           &:hover,
           &:focus {
-            color: $color-primary;
+            color: $color-base;
+            border-bottom: 1px solid $color-base;
           }
-
+  
         }
-
+  
       }
-
-    }
-
-    &-readmore {
-      margin-left: -0.7rem;
+  
+      &__description {
+        font-size: $typographic-base-font-size;
+        @include line-height(1);
+        @include margin-bottom(.5);
+      }
+  
+      &__readmore {
+        margin-left: -0.7rem;
+      }
     }
 
     &.has_featured-image {
       padding: 0;
-      color: $color-white;
 
-      .feed__item-postThumbnail {
-        padding: 24px;
-        box-sizing: border-box;
-        min-height: 200px;
-
-        &-link {
-          display: block;
-          position: absolute;
+      .feed__item-postThumbnail-link {
+        .feed__item-postThumbnail {
           width: 100%;
-          height: 100%;
-          left: 0;
-          top: 0;
-          background: rgba(0,0,0,0.4);
-          background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.12) 100%);
-          z-index: 1;
+          height: 200px;
+          overflow: hidden;
+          box-sizing: border-box;
         }
       }
 
       .feed__item-info {
-        margin-top: 200px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .feed__item-title {
-        &-link {
-          color: $color-white;
-  
-          &:hover,
-          &:focus {
-            border-bottom-color: $color-white;
-          }
-        }
-      }
-  
-      .feed__item-description {
-        color: darken($color-white, 10%);
-        font-size: 1rem;
+        padding: 16px 20px 20px;
       }
 
     }

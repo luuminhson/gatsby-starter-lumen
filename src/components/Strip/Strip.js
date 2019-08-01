@@ -25,19 +25,19 @@ const StripLayout = (edge) => {
                 <div className={styles['strip__item-inner__info']}>
                     <h3 className={styles['strip__item-inner__info__title']}>{edge.node.frontmatter.title}</h3>
                     <span className={styles['strip__item-inner__info__date']}>{moment(edge.node.frontmatter.date).format('D MMMM, YYYY')}</span>
-                    
+
                 </div>
             </Link>
         );
     } else {
-        return (<div className={styles['strip__item-inner__info']}>
+        return (
             <div className={styles['strip__item-inner__info']}>
                 <h3 className={styles['strip__item-inner__info__title']}>
                     <Link className={styles['strip__item-inner__info__title__link']} to={edge.node.fields.slug}>{edge.node.frontmatter.title}</Link>
                 </h3>
                 <span className={styles['strip__item-inner__info__date']}>{moment(edge.node.frontmatter.date).format('D MMMM, YYYY')}</span>
             </div>
-        </div>);
+        );
     }
 }
 

@@ -56,6 +56,7 @@ $scrollbar-hidden-padding: 4.2rem;
                 flex: 1 0 100%;
                 padding: 16px 20px 20px;
                 max-width: 100%;
+                box-sizing: border-box;
                 
                 &__title {
                     color: $color-base;
@@ -68,6 +69,10 @@ $scrollbar-hidden-padding: 4.2rem;
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
                     -webkit-line-clamp: 2; /* number of lines to show */
+
+                    &__link {
+                        color: $color-base;
+                    }
                 }
 
                 &__date {
@@ -82,8 +87,6 @@ $scrollbar-hidden-padding: 4.2rem;
         &.has_featured-image {
             .strip__item-inner {
                 &__postThumbnail {
-                    display: flex;
-                    align-items: flex-end;
                     width: 100%;
                     height: 160px;
                     overflow: hidden;
