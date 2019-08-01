@@ -217,23 +217,18 @@ module.exports = {
     'gatsby-plugin-flow',
     'gatsby-plugin-remove-trailing-slashes',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: `Merriweather Sans`,
-            variants: [`400`, `700`, `800`],
-            subsets: [`latin-ext`, `vietnamese`],
-            fontDisplay: `swap`
-          },
-          {
-            family: `Lora`,
-            variants: [`400`, `400i`, `700`, `700i`],
-            subsets: [`latin-ext`, `vietnamese`],
-            fontDisplay: `fallback`
-          },
-        ],
-      },
+        custom: {
+          families: [
+            'Merriweather Sans:n4,n7,n8',
+            'Lora:n4,i4,n7,i7'
+          ],
+          urls: [
+            'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Merriweather+Sans:400,700,800&display=swap&subset=latin-ext',
+          ],
+        },
+      }
     }
   ]
 };
