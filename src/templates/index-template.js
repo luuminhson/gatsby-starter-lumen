@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Strip from '../components/Strip';
+import HorizontalCard from '../components/HorizontalCard';
 import Page from '../components/Page';
 import { useSiteMetadata } from '../hooks';
 import type { AllMarkdownRemark } from '../types';
@@ -16,10 +17,13 @@ const IndexTemplate = ({ data }: Props) => {
 
   const blogPost = data.blogStrip.edges;
 
+  const workPost = data.workList.edges;
+
   return (
     <Layout title={siteTitle} description={siteSubtitle} isIndex dark={dark}>
-      <Page>
+      <Page isIndex>
         <Strip edges={blogPost} sectionTitle='Articles' sectionLink='/blog' sectionLinkLabel='See All' />
+        <HorizontalCard edges={workPost} sectionTitle='Works' sectionLink='/works' sectionLinkLabel='See All' />
       </Page>
     </Layout>
   );
@@ -58,7 +62,36 @@ export const query = graphql`
         }
       }
     }
-
+    workList: allMarkdownRemark(
+      limit: 5,
+      skip: 0,
+      filter: { frontmatter: { template: { eq: "work" }, draft: { ne: true } } },
+      sort: { order: DESC, fields: [frontmatter___year] }
+    ){
+    edges {
+      node {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          year
+          roles
+          description
+          featuredImage {
+            childImageSharp {
+              resize(width: 500, height: 500) {
+                src
+              }
+              fluid(maxWidth: 900) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   }
 `;
 

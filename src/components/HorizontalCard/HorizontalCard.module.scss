@@ -1,0 +1,118 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+$thumbnail-size: 100px;
+
+.wrapper {
+    margin: 0 -1.25rem;
+
+    .section__title {
+        padding: 0 1.5rem;
+    }
+}
+
+.horizCard {
+    margin-top: 1rem;
+
+    &__item {
+        box-shadow: $block-item-shadow;
+        background-color: $color-white;
+        margin: 0 1.5rem 1.5rem;
+        box-sizing: border-box;
+
+        &-inner {
+            &__link {
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch;
+                width: 100%;
+            }
+
+            &__info {
+                flex: 1 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
+                box-sizing: border-box;
+                max-width: 100%;
+
+                &__title {
+                    color: $color-base;
+                    font-size: 1rem;
+                    line-height: 24px;
+                    max-height: 48px;
+                    margin: 0 0 8px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                    text-overflow: ellipsis;
+
+                    &__link {
+                        color: $color-base;
+                    }
+                }
+
+                &__meta{
+                    display: block;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: lighten($color-base, 20%);
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+
+        &.has_featured-image {
+            .horizCard__item-inner {
+                position: relative;
+
+                &__postThumbnail {
+                    width: $thumbnail-size;
+                    height: $thumbnail-size;
+                }
+
+                &__year {
+                    position: absolute;
+                    left: 8px;
+                    top: 8px;
+                    background-color: rgba($color-base, 0.85);
+                    font-family: $typographic-font-family-heading;
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: 600;
+                    color: $color-white;
+                    padding: 1px 8px 3px;
+                    border-radius: 20px;
+                }
+
+                &__info {
+                    max-width: calc(100% - #{$thumbnail-size});
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint-sm {
+    .wrapper {
+        height: auto;
+
+        .section__title {
+            padding: 0 1.75rem;
+        }
+    }
+
+    .horizCard {
+
+    }
+}
+
+@include breakpoint-md {
+    .wrapper {
+        margin: 0 -2.1875rem;
+    }
+}

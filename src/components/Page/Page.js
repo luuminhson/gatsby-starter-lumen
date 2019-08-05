@@ -7,12 +7,13 @@ type Props = {
   isIndex: bool,
   isBlog: bool,
   isWork: bool,
+  isPage: bool,
   isIllussion: bool,
   withSidebar: bool,
   className: string
 };
 
-const Page = ({ title, children, isIndex, isBlog, isWork, isIllussion, withSidebar, className }: Props) => {
+const Page = ({ title, children, isIndex, isBlog, isWork, isPage, isIllussion, withSidebar, className }: Props) => {
   return (
     <div
       className={[
@@ -20,6 +21,7 @@ const Page = ({ title, children, isIndex, isBlog, isWork, isIllussion, withSideb
         isIndex && styles['isIndex'],
         isBlog && styles['isBlog'],
         isWork && styles['isWork'],
+        isPage && styles['isPage'],
         isIllussion && styles['isIllussion'],
         withSidebar && styles['withSidebar'],
         className

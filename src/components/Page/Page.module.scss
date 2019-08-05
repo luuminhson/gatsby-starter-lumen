@@ -20,6 +20,14 @@
     @include margin(0, 0, 1);
   }
 
+  &.isIndex,
+  &.isWork,
+  &.isPage {
+    .page__body {
+      @include margin(0, 0, 3.5);
+    }
+  }
+
 }
 
 @include breakpoint-sm {
