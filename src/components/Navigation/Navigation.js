@@ -110,7 +110,6 @@ class PureNavigation extends React.Component {
                         {navCenter}
                         <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} isWork={isWork} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
                     </div>
-                    {console.log(navCenter)}
                 </div>
             </Headroom>
         );

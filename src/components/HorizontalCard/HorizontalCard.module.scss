@@ -107,12 +107,30 @@ $thumbnail-size: 100px;
     }
 
     .horizCard {
-
+        margin: 1rem 0.75rem 0;
+    
+        &__item {
+            display: inline-block;
+            width: calc(50% - 2rem);
+            max-width: 100%;
+            margin: 0 1rem 2rem;
+        }
     }
 }
 
 @include breakpoint-md {
     .wrapper {
-        margin: 0 -2.1875rem;
+        margin: 0 -2rem;
+    }
+
+    .horizCard {
+        margin: 1rem 0.75rem 0;
+    
+        &__item {
+            display: inline-block;
+            width: calc(50% - 2rem);
+            max-width: 100%;
+            margin: 0 1rem 2rem;
+        }
     }
 }
