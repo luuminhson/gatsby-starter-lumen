@@ -6,11 +6,17 @@ type Props = {
   logo: Object,
   type: String,
   dark: false,
+  pageTitle: string
 };
 
-const Logo = ({ logo, type, dark }: Props) => (
-  <div className={[styles['logo'], dark && styles['dark']].join(' ')}>
-    {(type === 'img') ? (
+const Logo = ({ logo, type, pageTitle, dark }: Props) => {
+
+  const title = (
+    <h1 className={[styles['logo__text'], styles['logo__pageTitle']].join(' ')}>{pageTitle}</h1>
+  );
+
+  const mainLogo = (
+    (type === 'img') ? (
       <Link to="/" className={styles['logo__link']}>
         <img
           src={dark ? withPrefix(logo.src.dark) : withPrefix(logo.src.light)}
@@ -23,8 +29,15 @@ const Logo = ({ logo, type, dark }: Props) => (
         <h1 className={styles['logo__text']}>
           <Link className={styles['logo__text-link']} to="/">{logo.text}</Link>
         </h1>
-      )}
-  </div>
-);
+      )
+  );
+
+  return (
+    <div className={[styles['logo'], dark && styles['dark']].join(' ')}>
+      <div className={styles['desktopLogo']}>{ mainLogo }</div>
+      <div className={styles['mobileLogo']}>{ (typeof pageTitle === 'undefined') ? mainLogo : title }</div>
+    </div>
+  )
+};
 
 export default Logo;

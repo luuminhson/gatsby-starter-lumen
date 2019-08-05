@@ -29,7 +29,7 @@ const WorkTemplate = ({ data, pageContext }: Props) => {
   const pageTitle = currentPage > 0 ? `Works - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle} dark={dark}>
+    <Layout title={pageTitle} description={siteSubtitle} dark={dark} pageTitle='Works'>
       <Page>
         <Feed edges={edges} />
         <Pagination

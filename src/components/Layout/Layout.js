@@ -39,7 +39,8 @@ class PureLayout extends React.Component {
       isPost,
       dark,
       hasFeaturedImage,
-      from
+      from,
+      pageTitle,
     } = this.props;
 
     const { sidebar } = this.state;
@@ -48,7 +49,7 @@ class PureLayout extends React.Component {
 
     return (
       <div>
-        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} isWork={isWork} onFeaturedImage={hasFeaturedImage} dark={dark} from={from} />
+        <Navigation burgerClick={this.toggleSidebar} isIndex={isIndex} isPost={isPost} isWork={isWork} pageTitle={pageTitle} onFeaturedImage={hasFeaturedImage} dark={dark} from={from} />
         <BottomNavigation className={styles['bottomNav']} bottomNav={bottomNav} />
         <div
           className={[

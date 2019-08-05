@@ -3,7 +3,6 @@
 
 .layout {
     lost-center: $layout-width;
-    @include margin-bottom(2);
 
     &.isIndex {
         &:before {

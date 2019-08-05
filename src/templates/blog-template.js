@@ -33,7 +33,7 @@ const BlogTemplate = ({ data, pageContext }: Props) => {
   const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
-    <Layout title={pageTitle} description={siteSubtitle} dark={dark} isBlog>
+    <Layout title={pageTitle} description={siteSubtitle} dark={dark} isBlog pageTitle='Articles'>
       <Page isBlog withSidebar={hasSidebar}>
         <Feed edges={edges} />
         {hasNextPage &&

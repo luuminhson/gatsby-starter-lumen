@@ -5,6 +5,10 @@
   display: flex;
   align-items: center;
 
+  .desktopLogo {
+    display: none;
+  }
+
   &__link {
     display: block;
     padding: 22px 0;
@@ -20,10 +24,9 @@
 
   &__text {
     font-size: $typographic-base-font-size * 1.125;
-    font-weight: 700;
+    font-weight: 900;
     @include line-height(1.125);
     text-transform: uppercase;
-    @include margin(.5, 0, .5, 0);
     margin: 0;
 
     &-link {
@@ -33,13 +36,30 @@
       &:focus {
         color: $color-base
       }
+    }
 
-      &:after {
-        content: '.';
-        color: $color-primary;
-        font-size: 1.6rem;
-        line-height: 1rem;
-      }
+    &:before,
+    &:after {
+      content: '.';
+      display: inline;
+      color: $color-primary;
+      font-size: 1.6rem;
+      line-height: 1rem;
+      margin: 0 0.1rem;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &__pageTitle {
+    &:before {
+      display: inline;
+    }
+
+    &:after {
+      display: none;
     }
   }
 
@@ -53,6 +73,18 @@
           color: $color-white
         }
       }
+    }
+  }
+}
+
+@include breakpoint-sm {
+  .logo {
+    .mobileLogo {
+      display: none;
+    }
+  
+    .desktopLogo {
+      display: block;
     }
   }
 }

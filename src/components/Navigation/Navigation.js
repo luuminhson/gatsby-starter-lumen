@@ -50,6 +50,7 @@ class PureNavigation extends React.Component {
             burgerClick,
             dark,
             from,
+            pageTitle,
             className
         } = this.props;
 
@@ -72,7 +73,7 @@ class PureNavigation extends React.Component {
 
         const backButton = <Link to={backLink()} className={styles['backButton']}>←</Link>;
 
-        const siteLogo = <Logo type={logo.type} logo={logo} dark={unfixed && isDetailScreen && onFeaturedImage ? true : dark} />;
+        const siteLogo = <Logo pageTitle={pageTitle} type={logo.type} logo={logo} dark={unfixed && isDetailScreen && onFeaturedImage ? true : dark} />;
 
         const navLeft = isDetailScreen ? backButton : siteLogo;
 
