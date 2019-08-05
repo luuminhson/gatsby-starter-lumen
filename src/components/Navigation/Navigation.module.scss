@@ -23,6 +23,18 @@
             font-weight: 400;
             color: $color-base;
         }
+
+        .detailTitle {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: $color-base;
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            text-overflow: ellipsis;
+            margin: 0;
+            padding: 0 12px;
+        }
     }
 
     &:before {
@@ -43,7 +55,8 @@
             box-shadow: $nav-shadow-dark;
         }
 
-        .backButton {
+        .backButton,
+        .detailTitle {
             color: $color-white;
         }
     }
@@ -69,8 +82,10 @@
                 }
         
                 &__inner {
-                    .backButton {
+                    .backButton,
+                    .detailTitle {
                         color: $color-white;
+                        transition: color 0.4s ease-in-out;
                     }
                 }
             }
@@ -83,6 +98,11 @@
                     box-shadow: none;
                     transition: all 0.4s ease-in-out;
                 }
+            }
+
+            .detailTitle {
+                opacity: 0;
+                transition: opacity 0.4s ease-in-out;
             }
         }
 

@@ -32,7 +32,7 @@ const WorkTemplate = ({ data }: Props) => {
   return (
     <Location>
       {({ location }) => (
-        <Layout title={`${workTitle} - ${siteTitle}`} description={metaDescription} isWork hasFeaturedImage={hasFeaturedImage} style={'work'} dark={dark} from={checkLocationState(location)}>
+        <Layout title={`${workTitle} - ${siteTitle}`} description={metaDescription} isWork detailTitle={workTitle} hasFeaturedImage={hasFeaturedImage} style={'work'} dark={dark} from={checkLocationState(location)}>
           <Work work={data.markdownRemark} />
         </Layout>
       )}

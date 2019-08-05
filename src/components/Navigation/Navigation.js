@@ -51,6 +51,7 @@ class PureNavigation extends React.Component {
             dark,
             from,
             pageTitle,
+            detailTitle,
             className
         } = this.props;
 
@@ -73,9 +74,13 @@ class PureNavigation extends React.Component {
 
         const backButton = <Link to={backLink()} className={styles['backButton']}>←</Link>;
 
+        const detailPageTitle = <h1 className={styles['detailTitle']}>{detailTitle}</h1>
+
         const siteLogo = <Logo pageTitle={pageTitle} type={logo.type} logo={logo} dark={unfixed && isDetailScreen && onFeaturedImage ? true : dark} />;
 
         const navLeft = isDetailScreen ? backButton : siteLogo;
+
+        const navCenter = ( isDetailScreen && ( typeof detailTitle !== 'undefined' ) ) ? detailPageTitle : null;
 
         return (
             <Headroom
@@ -102,8 +107,10 @@ class PureNavigation extends React.Component {
                 ].join(' ')}>
                     <div className={styles['navigation__inner']}>
                         {navLeft}
+                        {navCenter}
                         <Menu menu={menu} burgerClick={burgerClick} isPost={isPost} isWork={isWork} onFeaturedImage={onFeaturedImage} unfixed={unfixed} dark={dark} />
                     </div>
+                    {console.log(navCenter)}
                 </div>
             </Headroom>
         );
