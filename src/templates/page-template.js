@@ -20,7 +20,7 @@ const PageTemplate = ({ data }: Props) => {
 
   return (
     <Layout title={`${pageTitle} - ${siteTitle}`} description={metaDescription} dark={dark}>
-      <Page title={pageTitle}>
+      <Page title={pageTitle} isPage>
         <div dangerouslySetInnerHTML={{ __html: pageBody }} />
       </Page>
     </Layout>

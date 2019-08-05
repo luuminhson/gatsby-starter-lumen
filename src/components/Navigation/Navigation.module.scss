@@ -12,21 +12,26 @@
         padding: 0 24px;
         height: $nav-height;
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
 
         .backButton {
             font-family: $typographic-font-family-heading;
+            width: 60px;
+            height: $nav-height;
+            line-height: $nav-height;
             font-size: 1.75rem;
-            padding: 12px 16px;
-            margin-left: -16px;
             font-weight: 400;
             color: $color-base;
+            padding-left: 12px;
+            margin-left: -0.75rem;
+            box-sizing: border-box;
         }
 
         .detailTitle {
             display: inline-block;
             font-size: 0.85rem;
+            line-height: $nav-height;
             color: $color-base;
             white-space: nowrap;
             overflow: hidden;
