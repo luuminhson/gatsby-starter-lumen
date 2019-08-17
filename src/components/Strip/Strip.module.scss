@@ -114,9 +114,13 @@ $scrollbar-hidden-padding: 4.2rem;
 
         &__item {
             flex-basis: 33.3%;
-            max-width: calc(33.3% - 32px);
+            max-width: calc(33.33% - 32px);
             padding: 0 1rem;
             margin-bottom: 32px;
+
+            &:last-child {
+                padding-right: 0.75rem;
+            }
 
             &.has_featured-image {
                 .strip__item-inner {

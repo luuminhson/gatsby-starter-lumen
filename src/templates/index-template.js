@@ -32,7 +32,7 @@ const IndexTemplate = ({ data }: Props) => {
 export const query = graphql`
   query IndexTemplate {
     blogStrip: allMarkdownRemark(
-        limit: 5,
+        limit: 6,
         skip: 0,
         filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } },
         sort: { order: DESC, fields: [frontmatter___date] }
